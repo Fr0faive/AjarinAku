@@ -11,7 +11,8 @@ export default {
         biruMuda: "#20E6E5",
       },
       backgroundImage: {
-        "signUpImg": "url('assets/loginImg.png')",
+        "signUpImg": "url('assets/SignupImg.png')",
+        "signInImg": "url('assets/SigninImg.png')",
       }
     },
   },

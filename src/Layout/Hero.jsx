@@ -1,4 +1,4 @@
-import Button from "../component/Button";
+import { ButtonP } from "../component/Button";
 
 const Hero = () => {
   return (
@@ -28,7 +28,7 @@ const Hero = () => {
             aperiam. Illum ea error eligendi, in dicta, quisquam qui nihil quae
             id architecto sunt asperiores.
           </p>
-          <Button children="Join for free" color="info" />
+          <ButtonP children="Join for free" color="bg-biruTua" />
         </div>
         <img
           src="./assets/heroImg.png"

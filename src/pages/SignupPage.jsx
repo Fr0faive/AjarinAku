@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import InputField from "../component/InputField";
-import Button from "../component/Button";
+import { Button } from "../component/Button";
 
 const SignupPage = () => {
   return (
     <>
       <div className="w-full flex flex-wrap h-screen">
         <div className="w-8/12 h-full bg-signUpImg bg-cover">
-          <div className="mt-16 bg-white h-20 flex items-center max-w-[230px] rounded-r-xl">
+          <div className="mt-12 bg-white h-20 flex items-center max-w-[230px] rounded-r-xl">
             <Link to={"/"}><img src="assets/ajarinaku.svg" alt="" className="pl-7" /></Link>
           </div>
         </div>
@@ -43,7 +43,7 @@ const SignupPage = () => {
               </div>
               <Button children="Sign Up" color="primary" />
             </form>
-            <p className="mt-16">Already have an account? <Link to={"/login"} className="text-biruTua">Login</Link></p>
+            <p className="mt-16">Already have an account? <Link to={"/login"} className="text-biruTua">Sign In</Link></p>
           </div>
         </div>
       </div>
