@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Button = (props) => {
-    const { children, color } = props;
+    const { children, color, link } = props;
     return (
-        <button className={`btn btn-${color}`}>{children}</button>
+        <Link to={link}>
+            <button className={`btn btn-${color} btn-outline w-full`}>{children}</button>
+        </Link>
     )
 }
 

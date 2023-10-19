@@ -47,7 +47,7 @@ window.addEventListener('scroll', changeNavbarColor);
           <Link to="#" className="text-biruTua text-lg mr-4">
             Explore
           </Link>
-          <Button children="Login" color="primary" />
+          <Button children="Login" color="primary" link="/login"/>
         </div>
       </nav>
     </header>

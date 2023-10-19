@@ -8,6 +8,10 @@ export default {
     extend: {
       colors: {
         biruTua: "#00419E",
+        biruMuda: "#20E6E5",
+      },
+      backgroundImage: {
+        "signUpImg": "url('assets/loginImg.png')",
       }
     },
   },

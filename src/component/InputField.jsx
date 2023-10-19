@@ -1,9 +1,14 @@
-const InputField = () => {
-    return(
+const InputField = (props) => {
+    const { type, placeholder, margin } = props;
+  return (
     <>
-    <input type="text" placeholder="Type here" className="input input-bordered input-info w-full max-w-xs" />
+      <input
+        type={type}
+        placeholder={placeholder}
+        className={`input input-bordered input-info bg-white w-full ${margin}`}
+      />
     </>
-    )
-}
+  );
+};
 
 export default InputField;
