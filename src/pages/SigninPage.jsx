@@ -46,7 +46,13 @@ const SigninPage = () => {
             </div>
           </div>
         </div>
-        <div className="w-8/12 h-full bg-signInImg bg-cover"></div>
+        <div className="w-8/12 h-full bg-signInImg bg-cover flex justify-end">
+          <div className="mt-12 bg-white h-20 flex items-center max-w-[230px] rounded-l-xl">
+            <Link to={"/"}>
+              <img src="assets/ajarinaku.svg" alt="" className="pl-7 mr-3" />
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   );
