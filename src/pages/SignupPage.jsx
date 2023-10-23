@@ -11,7 +11,7 @@ const SignupPage = () => {
             <Link to={"/"}><img src="assets/ajarinaku.svg" alt="" className="pr-7 ml-4" /></Link>
           </div>
         </div>
-        <div className="bg-white w-1/3 flex justify-center items-center">
+        <div className="bg-white w-1/3 flex justify-center items-center h-screen">
           <div className="mx-20">
             <h2 className="text-gray-900 text-[62px] text-start font-semibold">
               <span className="text-biruTua">Sign</span>{" "}
