@@ -6,7 +6,7 @@ const SigninPage = () => {
   return (
     <>
       <div className="w-full flex flex-wrap h-screen">
-        <div className="w-1/3 bg-white flex justify-center items-center h-screen">
+        <div className="w-1/3 bg-white flex justify-center items-center h-full">
           <div className="mx-20">
             <h2 className="text-gray-900 text-[62px] text-start font-semibold">
               <span className="text-biruTua">Sign</span>{" "}
