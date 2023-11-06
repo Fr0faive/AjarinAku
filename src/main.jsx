@@ -8,6 +8,7 @@ import {
 import HomePage from './pages/HomePage.jsx';
 import SignupPage from './pages/SignupPage';
 import SigninPage from './pages/SigninPage';
+import "./assets/style.css";
 
 const router = createBrowserRouter([
   {
