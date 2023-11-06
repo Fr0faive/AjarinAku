@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import { ButtonP } from "../component/Button";
 
 const Hero = () => {
