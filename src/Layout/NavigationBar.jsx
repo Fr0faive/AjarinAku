@@ -12,14 +12,17 @@ import { Dialog } from "@headlessui/react";
 const NavigationBar = () => {
   const navigation = [
     {
+      id: 1,
       name: "Home",
       href: "/",
     },
     {
+      id: 2,
       name: "Explore",
       href: "/explore",
     },
     {
+      id: 3,
       name: "Randomize",
       href: "/randomize",
     },

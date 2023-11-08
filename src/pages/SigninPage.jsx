@@ -37,7 +37,7 @@ const SigninPage = () => {
                   Forgot Password?
                 </Link>
               </div>
-              <Button children="Log In" color="primary" />
+              <Button value="Log In" color="primary" />
             </form>
             <div className="inline-flex items-center justify-center w-full gap-4">
               <hr className="w-20 2xl:w-36 my-8 bg-gray-200 border-1 dark:bg-gray-700" />
