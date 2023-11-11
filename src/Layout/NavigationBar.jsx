@@ -44,7 +44,7 @@ const NavigationBar = () => {
         className={
           changeColor
             ? "h-24 w-full bg-white flex justify-between items-center"
-            : "h-24 w-full flex justify-between items-center"
+            : "h-24 w-full bg-white flex justify-between items-center"
         }
       >
         <div className="flex flex-wrap gap-7 lg:gap-14 items-center mx-9">

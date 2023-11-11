@@ -3,6 +3,13 @@ import InputField from "../component/InputField";
 import { Button, ButtonP } from "../component/Button";
 
 const SigninPage = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // localStorage.setItem
+    console.log(e.target.email.value);
+    console.log(e.target.password.value);
+    console.log("Form submitted");
+  };
   return (
     <>
       <div className="w-full flex flex-wrap h-screen">
@@ -16,12 +23,23 @@ const SigninPage = () => {
               Welcome to AjarinAku E-Learning Website. Enter your credentials to
               access your account
             </p>
-            <form action="submit" method="post" className="form-control">
-              <InputField type="email" placeholder="Email" margin="mb-7" />
+            <form
+              action="submit"
+              method="post"
+              className="form-control"
+              onSubmit={handleLogin}
+            >
+              <InputField
+                type="email"
+                placeholder="Email"
+                margin="mb-7"
+                name="email"
+              />
               <InputField
                 type="password"
                 placeholder="Password"
                 margin="mb-7"
+                name="password"
               />
               <div className="flex flex-row justify-between items-center gap-4 mb-7">
                 <div className="flex flex-row items-center gap-3">
@@ -45,8 +63,8 @@ const SigninPage = () => {
               <hr className="w-20 2xl:w-36 my-8 bg-gray-200 border-1 dark:bg-gray-700" />
             </div>
             <div className="flex flex-row gap-4">
-              <ButtonP children="Google" color="google" />
-              <ButtonP children="Facebook" color="facebook" />
+              <ButtonP value="Google" color="google" />
+              <ButtonP value="Facebook" color="facebook" />
             </div>
             <p className="mt-16">
               Don't have an account?{" "}
