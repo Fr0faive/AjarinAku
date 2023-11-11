@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getArticles } from "../services/article.service";
+import { ButtonP } from "../component/Button";
+import { Card } from "../component/Card";
 
 const dataArticle = [
   {
@@ -56,7 +58,14 @@ const ArticleList = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/4">Category</div>
+      <div className="w-1/4 pt-28 px-10">
+        <h2 className="text-black text-xl">
+          Lessons Filter
+        </h2>
+        <div className="flex flex-col gap-2 mt-1">
+          <Card />
+        </div>
+      </div>
     </div>
   );
 };
