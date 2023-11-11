@@ -1,4 +1,5 @@
 import ArticleList from "../Layout/ArticleList";
+import Footer from "../Layout/Footer";
 import NavigationBar from "../Layout/NavigationBar";
 
 const ProductPage = () => {
@@ -6,6 +7,7 @@ const ProductPage = () => {
     <>
       <NavigationBar />
       <ArticleList />
+      <Footer />
     </>
   );
 };

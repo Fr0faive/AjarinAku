@@ -48,10 +48,10 @@ const ArticleList = () => {
                 </figure>
                 <div className="card-body h-1/3">
                   <div className="badge badge-secondary">NEW</div>
-                  <h2 className="text-black font-medium text-sm flex items-center gap-2">
+                  <h2 className="text-black font-medium text-md flex items-center gap-2">
                     {article.title}
                   </h2>
-                  <p className="text-xs h-1/3">{article.description}</p>
+                  <p className="text-xs text-slate-500 h-1/3">{article.description}</p>
                 </div>
               </div>
             ))}

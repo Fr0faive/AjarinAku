@@ -61,7 +61,7 @@ export const Card = () => {
     <>
       {cardButton.map((card) => (
         <Link to={card.href}>
-          <div className="card card-side bg-slate-200 shadow-xl w-64 h-10 mb-2">
+          <div className="card card-side bg-slate-200 shadow-xl w-64 h-10 mb-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:shadow-sky-200">
             <figure className="bg-biruTua p-2 rounded-tl-lg rounded-bl-lg">
               <img src={card.src} />
             </figure>
