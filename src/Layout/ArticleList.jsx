@@ -42,16 +42,16 @@ const ArticleList = () => {
           </div>
           <div className="flex flex-wrap gap-4 my-[19px]">
             {articles.map((article) => (
-              <div className="card w-[180px] bg-white shadow-xl">
-                <figure>
+              <div className="card w-[180px] bg-white shadow-xl overflow-hidden">
+                <figure className="h-1/3">
                   <img src={article.image} alt="Shoes" className="w-1/2 m-6" />
                 </figure>
-                <div className="card-body">
-                  <h2 className="font-medium text-sm flex items-center gap-2">
+                <div className="card-body h-1/3">
+                  <div className="badge badge-secondary">NEW</div>
+                  <h2 className="text-black font-medium text-sm flex items-center gap-2">
                     {article.title}
-                    <div className="badge badge-secondary">NEW</div>
                   </h2>
-                  <p className="text-xs">{article.description}</p>
+                  <p className="text-xs h-1/3">{article.description}</p>
                 </div>
               </div>
             ))}
@@ -59,7 +59,7 @@ const ArticleList = () => {
         </div>
       </div>
       <div className="w-1/4 pt-28 px-10">
-        <h2 className="text-black text-xl">
+        <h2 className="text-gray-900 text-[26px] font-medium leading-[39px] mb-5">
           Lessons Filter
         </h2>
         <div className="flex flex-col gap-2 mt-1">

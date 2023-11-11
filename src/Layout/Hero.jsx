@@ -17,7 +17,7 @@ const Hero = () => {
             aperiam. Illum ea error eligendi, in dicta, quisquam qui nihil quae
             id architecto sunt asperiores.
           </p>
-          <ButtonP children="Join for free" color="bg-biruTua" />
+          <ButtonP value="Join for free" color="bg-biruTua" />
         </div>
         <img
           src="./assets/heroImg.png"
