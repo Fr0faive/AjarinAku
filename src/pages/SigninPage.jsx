@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import InputField from "../component/InputField";
-import { Button } from "../component/Button";
+import { Button, ButtonP } from "../component/Button";
 
 const SigninPage = () => {
   return (
@@ -44,6 +44,16 @@ const SigninPage = () => {
               <span>or continue with</span>
               <hr className="w-20 2xl:w-36 my-8 bg-gray-200 border-1 dark:bg-gray-700" />
             </div>
+            <div className="flex flex-row gap-4">
+              <ButtonP children="Google" color="google" />
+              <ButtonP children="Facebook" color="facebook" />
+            </div>
+            <p className="mt-16">
+              Don't have an account?{" "}
+              <Link to={"/register"} className="text-biruTua">
+                Sign Up
+              </Link>
+            </p>
           </div>
         </div>
         <div className="w-8/12 h-full bg-signInImg bg-cover flex justify-end">

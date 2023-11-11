@@ -26,7 +26,7 @@ const NavigationBar = () => {
       name: "Randomize",
       href: "/randomize",
     },
-  ]
+  ];
   const [changeColor, setChangeColor] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -74,9 +74,11 @@ const NavigationBar = () => {
         </div>
         <div className="hidden lg:flex lg:flex-wrap gap-5 items-center mx-9">
           {navigation.map((item) => (
-            <Link to={item.href} className="text-biruTua text-lg mr-4">{item.name}</Link>
+            <Link to={item.href} className="text-biruTua text-lg mr-4">
+              {item.name}
+            </Link>
           ))}
-          <Button children="Login" color="primary" link="/login" />
+          <Button value="Login" color="primary" link="/login" />
         </div>
         <div className="flex lg:hidden mx-9 items-center gap-5">
           <button
@@ -102,7 +104,11 @@ const NavigationBar = () => {
               href="#"
               className="-m-1.5 p-1.5 flex justify-between items-center "
             >
-              <img className="h-[51px] w-auto" src="/assets/ajarinaku.svg" alt="AjarinAku" />
+              <img
+                className="h-[51px] w-auto"
+                src="/assets/ajarinaku.svg"
+                alt="AjarinAku"
+              />
             </a>
             <button
               type="button"
@@ -116,9 +122,14 @@ const NavigationBar = () => {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-              {navigation.map((item) => (
-            <Link to={item.href} className="text-biruTua -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50">{item.name}</Link>
-          ))}
+                {navigation.map((item) => (
+                  <Link
+                    to={item.href}
+                    className="text-biruTua -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
