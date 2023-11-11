@@ -41,19 +41,27 @@ const ArticleList = () => {
             </Link>
           </div>
           <div className="flex flex-wrap gap-4 my-[19px]">
-            {articles.map((article) => (
-              <div className="card w-[180px] bg-white shadow-xl overflow-hidden">
-                <figure className="h-1/3">
-                  <img src={article.image} alt="Shoes" className="w-1/2 m-6" />
-                </figure>
-                <div className="card-body h-1/3">
-                  <div className="badge badge-secondary">NEW</div>
-                  <h2 className="text-black font-medium text-md flex items-center gap-2">
-                    {article.title}
-                  </h2>
-                  <p className="text-xs text-slate-500 h-1/3">{article.description}</p>
+            {articles.slice(0, 10).map((article) => (
+              <Link to={`/article/${article.id}`}>
+                <div className="card w-[180px] max-h-56 bg-white shadow-xl overflow-hidden">
+                  <figure className="h-1/3">
+                    <img
+                      src={article.image}
+                      alt="Shoes"
+                      className="w-1/4 m-6"
+                    />
+                  </figure>
+                  <div className="card-body h-1/3">
+                    <div className="badge badge-secondary">NEW</div>
+                    <h2 className="text-black font-medium text-xs flex items-center gap-2">
+                      {article.title.substring(0, 20)}...
+                    </h2>
+                    <p className="text-xs text-slate-500 h-1/3">
+                      {article.description.substring(0, 20)}...
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
