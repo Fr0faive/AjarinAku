@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "../component/Button";
+import { ButtonP } from "../component/Button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -78,7 +78,7 @@ const NavigationBar = () => {
               {item.name}
             </Link>
           ))}
-          <Button value="Login" color="primary" link="/login" />
+          <ButtonP value="Login" color="primary" link="/login" />
         </div>
         <div className="flex lg:hidden mx-9 items-center gap-5">
           <button
