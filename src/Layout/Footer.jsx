@@ -1,8 +1,5 @@
-import {
-  faFacebook,
-  faInstagram,
-  faSquareXTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {  faFacebook,  faInstagram,  faSquareXTwitter} from "@fortawesome/free-brands-svg-icons";
 const Footer = () => {
   return (
     <footer className="footer p-10 bg-white text-neutral-content">
