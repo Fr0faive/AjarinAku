@@ -35,12 +35,12 @@ const ArticleList = () => {
             </span>
             <Link
               to={"/"}
-              className="text-biruTua font-medium text-lg leading-7"
+              className="text-biruTua font-medium text-lg leading-7 mr-4"
             >
               See more...
             </Link>
           </div>
-          <div className="flex flex-wrap gap-4 my-[19px]">
+          <div className="flex flex-wrap gap-[22px] my-[19px]">
             {articles.slice(0, 10).map((article) => (
               <Link to={`/article/${article.id}`}>
                 <div className="card w-[180px] max-h-56 bg-white shadow-xl overflow-hidden">
