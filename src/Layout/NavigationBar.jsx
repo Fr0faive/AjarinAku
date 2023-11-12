@@ -74,7 +74,7 @@ const NavigationBar = () => {
         </div>
         <div className="hidden lg:flex lg:flex-wrap gap-5 items-center mx-9">
           {navigation.map((item) => (
-            <Link to={item.href} className="text-biruTua text-lg mr-4">
+            <Link to={item.href} key={item.id} className="text-biruTua text-lg mr-4">
               {item.name}
             </Link>
           ))}
@@ -125,6 +125,7 @@ const NavigationBar = () => {
                 {navigation.map((item) => (
                   <Link
                     to={item.href}
+                    key={item.id}
                     className="text-biruTua -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                   >
                     {item.name}

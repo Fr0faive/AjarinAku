@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getArticles } from "../services/article.service";
-import { ButtonP } from "../component/Button";
+// import { ButtonP } from "../component/Button";
 import { Card } from "../component/Card";
 
 const dataArticle = [
@@ -42,7 +42,7 @@ const ArticleList = () => {
           </div>
           <div className="flex flex-wrap gap-[22px] my-[19px]">
             {articles.slice(0, 10).map((article) => (
-              <Link to={`/article/${article.id}`}>
+              <Link to={`/article/${article.id}`} key={article.id}>
                 <div className="card w-[180px] max-h-56 bg-white shadow-xl overflow-hidden">
                   <figure className="h-1/3">
                     <img

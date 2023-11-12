@@ -7,6 +7,7 @@ import SignupPage from "./pages/SignupPage";
 import SigninPage from "./pages/SigninPage";
 import "./assets/style.css";
 import ProductPage from "./pages/LandingPage.jsx";
+import ArticlePage from "./pages/ArticlePage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/explore",
     element: <ProductPage />,
+  },
+  {
+    path: "/article",
+    element: <ArticlePage />
   },
 ]);
 
