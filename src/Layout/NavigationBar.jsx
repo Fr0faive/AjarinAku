@@ -74,11 +74,15 @@ const NavigationBar = () => {
         </div>
         <div className="hidden lg:flex lg:flex-wrap gap-5 items-center mx-9">
           {navigation.map((item) => (
-            <Link to={item.href} key={item.id} className="text-biruTua text-lg mr-4">
+            <Link
+              to={item.href}
+              key={item.id}
+              className="text-biruTua text-lg mr-4"
+            >
               {item.name}
             </Link>
           ))}
-          <ButtonP value="Login" color="primary" link="/login" />
+          <ButtonP value="Login" color="[#EFF0F4]" link="/login" />
         </div>
         <div className="flex lg:hidden mx-9 items-center gap-5">
           <button

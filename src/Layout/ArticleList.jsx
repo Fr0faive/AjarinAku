@@ -66,12 +66,14 @@ const ArticleList = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/4 pt-28 px-10">
-        <h2 className="text-gray-900 text-[26px] font-medium leading-[39px] mb-5">
-          Lessons Filter
-        </h2>
-        <div className="flex flex-col gap-2 mt-1">
-          <Card />
+      <div className="w-1/4">
+        <div className="pt-[110px] px-10">
+          <h2 className="text-gray-900 text-[26px] font-medium leading-[39px] mb-5">
+            Lessons Filter
+          </h2>
+          <div className="flex flex-col gap-2 mt-1">
+            <Card />
+          </div>
         </div>
       </div>
     </div>

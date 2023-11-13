@@ -21,6 +21,18 @@ const Footer = () => {
       name: "Contact Us",
       href: "/contact",
     },
+    {
+      name: "Settings",
+      href: "/settings",
+    },
+    {
+      name: "Terms & Conditions",
+      href: "/terms",
+    },
+    {
+      name: "Privacy Policy",
+      href: "/privacy",
+    },
   ];
   const dataIcon = [
     {
@@ -47,7 +59,7 @@ const Footer = () => {
           <img src="assets/ajarinaku.svg" alt="" />
         </Link>
         <hr className="w-full bg-gray-200 border-1 dark:bg-gray-700" />
-        <div className="flex flex-row gap-28 my-4">
+        <div className="flex flex-row gap-28 mt-4">
           <div className="flex flex-col ml-4">
             <div className="">
               <input
@@ -75,7 +87,14 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col">
-            {dataLink.map((link) => (
+            {dataLink.slice(0, 4).map((link) => (
+              <Link to={link.href} className="text-white mb-2">
+                {link.name}
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-col">
+            {dataLink.slice(4, 7).map((link) => (
               <Link to={link.href} className="text-white mb-2">
                 {link.name}
               </Link>

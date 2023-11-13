@@ -8,6 +8,7 @@ import SigninPage from "./pages/SigninPage";
 import "./assets/style.css";
 import ProductPage from "./pages/LandingPage.jsx";
 import ArticlePage from "./pages/ArticlePage.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/article",
-    element: <ArticlePage />
+    element: <ArticlePage />,
+  },
+  {
+    path: "/article/:id",
+    element: <ArticlePage />,
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);
 
