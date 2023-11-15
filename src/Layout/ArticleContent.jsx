@@ -1,10 +1,10 @@
 const Article = () => {
   return (
     <>
-      <div className="flex flex-col w-full pt-[120px] bg-[#EFF0F4] pb-14">
-        <div className="w-4/6 ml-10">
+      <div className="flex flex-col justify-center items-center w-full pt-[120px] bg-[#EFF0F4] pb-14">
+        <div className="w-4/5 ml-10">
           <div className="grid h-full py-5 card bg-white rounded-box px-5">
-            <h1 className="uppercase text-black font-bold mb-2">
+            <h1 className="uppercase text-black font-medium text-[40px] text-start mb-2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
               voluptatibus animi dolor illum ullam voluptate quia iusto ipsum
               saepe aliquid?
