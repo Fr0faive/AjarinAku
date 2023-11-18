@@ -50,7 +50,7 @@ const NavigationBar = () => {
         <div className="flex flex-wrap gap-7 lg:gap-14 items-center mx-9">
           <Link to={"/"}>
             <img
-              src="./assets/ajarinaku.svg"
+              src= "./assets/ajarinaku.svg"
               alt="ajarinaku"
               className="h-[51px]"
             />

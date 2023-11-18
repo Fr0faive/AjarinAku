@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
 export const Button = (props) => {
-  const { value, color } = props;
+  const { value, color, onClick } = props;
   return (
     <button
       className={`btn btn-${color} btn-outline w-full`}
       type="submit"
-      onClick={console.log("clicked")}
+      onClick={() => onClick()}
     >
       {value}
     </button>

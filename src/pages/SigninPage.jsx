@@ -1,15 +1,34 @@
 import { Link } from "react-router-dom";
 import InputField from "../component/InputField";
 import { Button, ButtonP } from "../component/Button";
+import { useState } from "react";
 
 const SigninPage = () => {
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // localStorage.setItem
-    console.log(e.target.email.value);
-    console.log(e.target.password.value);
-    console.log("Form submitted");
-  };
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
+  //   localStorage.setItem("email", e.target.email.value);
+  //   localStorage.setItem("password", e.target.password.value);
+  //   // console.log(e.target.email.value);
+  //   // console.log(e.target.password.value);
+  //   console.log("Form submitted");
+  //   window.location.href = "/product";
+  // };
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  async function login(){
+    return fetch('https://fakestoreapi.com/auth/login',{
+      method:'POST',
+      body:JSON.stringify({
+          username: username,
+          password: password
+      })
+  })
+      .then(res=>res.json())
+      .then(json=>console.log(json))
+  }
+
   return (
     <>
       <div className="w-full flex flex-wrap h-screen">
@@ -27,19 +46,21 @@ const SigninPage = () => {
               action="submit"
               method="post"
               className="form-control"
-              onSubmit={handleLogin}
+              // onSubmit={handleLogin}
             >
               <InputField
                 type="email"
                 placeholder="Email"
                 margin="mb-7"
                 name="email"
+                onChange={(e) => setUsername(e.target.value)}
               />
               <InputField
                 type="password"
                 placeholder="Password"
                 margin="mb-7"
                 name="password"
+                onChange={(e) => setPassword(e.target.value)}
               />
               <div className="flex flex-row justify-between items-center gap-4 mb-7">
                 <div className="flex flex-row items-center gap-3">
@@ -55,7 +76,7 @@ const SigninPage = () => {
                   Forgot Password?
                 </Link>
               </div>
-              <Button value="Log In" color="primary" />
+              <Button value="Log In" color="primary" onClick={login}/>
             </form>
             <div className="inline-flex items-center justify-center w-full gap-4">
               <hr className="w-20 2xl:w-36 my-8 bg-gray-200 border-1 dark:bg-gray-700" />
@@ -67,7 +88,7 @@ const SigninPage = () => {
               <ButtonP value="Facebook" color="facebook" />
             </div>
             <p className="mt-16">
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <Link to={"/register"} className="text-biruTua">
                 Sign Up
               </Link>

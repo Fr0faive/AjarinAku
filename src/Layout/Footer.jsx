@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const dataLink = [
     {
-      name: "home",
+      name: "Home",
       href: "/",
     },
     {
