@@ -1,21 +1,31 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getDetailsArticles } from "../services/article.service";
 
 const Article = () => {
   const { id } = useParams();
+  const [articles, setArticles] = useState({});
+  useEffect(() => {
+    getDetailsArticles(
+      id,
+      (data) => {
+        setArticles(data);
+      },
+      [id]
+    );
+  });
+  console.log(articles);
   return (
     <>
       <div className="flex flex-col justify-center items-center w-full pt-[120px] bg-[#EFF0F4] pb-14">
         <div className="w-4/5 ml-10">
           <div className="grid h-full py-5 card bg-white rounded-box px-5">
             <h1 className="uppercase text-black font-medium text-[40px] text-start mb-2">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
-              dolore, porro magni amet aliquid maxime quasi asperiores accusamus
-              eveniet nihil.
+              {articles.title}
             </h1>
             <div className="flex flex-row justify-between">
               <span className="text-black text-sm">
-                Detail : {id}
-                Organized by: Lorem, ipsum., Lorem.
+                Organized by: {articles.category}, ipsum., Lorem.
               </span>
               <button
                 type="button"
