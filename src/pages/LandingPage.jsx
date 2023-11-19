@@ -2,7 +2,7 @@ import ArticleList from "../Layout/ArticleList";
 import Footer from "../Layout/Footer";
 import NavigationBar from "../Layout/NavigationBar";
 
-const ProductPage = () => {
+const LandingPage = () => {
   return (
     <>
       <NavigationBar />
@@ -12,4 +12,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default LandingPage;

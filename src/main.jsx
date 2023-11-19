@@ -27,21 +27,12 @@ const router = createBrowserRouter([
     element: <SigninPage />,
   },
   {
-    path: "/product",
-    element: <ProductPage />,
-  },
-  {
     path: "/explore",
-    element: <ProductPage />,
+    element: <LandingPage />,
     canActivate: ({ state }) => state.auth.isAuthenticated, // Check authentication status
   },
   {
-    path: "/article",
-    element: <ArticlePage />,
-    canActivate: ({ state }) => state.auth.isAuthenticated, // Check authentication status
-  },
-  {
-    path: "/article/:id",
+    path: "/explore/article/:id",
     element: <ArticlePage />,
     canActivate: ({ state }) => state.auth.isAuthenticated, // Check authentication status
   },
