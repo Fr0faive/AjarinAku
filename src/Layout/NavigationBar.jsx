@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Dialog } from "@headlessui/react";
+import Logo from "../component/Logo";
 
 const NavigationBar = () => {
   const handleLogout = () => {
@@ -65,11 +66,7 @@ const NavigationBar = () => {
       >
         <div className="flex flex-wrap gap-7 lg:gap-14 items-center mx-9">
           <Link to={"/"}>
-            <img
-              src="./assets/ajarinaku.svg"
-              alt="ajarinaku"
-              className="h-[51px]"
-            />
+            <Logo />
           </Link>
           <div className="hidden lg:flex flex-row items-center">
             <input

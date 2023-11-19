@@ -2,6 +2,7 @@ import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faM, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import Logo from "../component/Logo";
 
 const Footer = () => {
   const dataLink = [
@@ -56,7 +57,7 @@ const Footer = () => {
     <footer className="footer p-10 bg-[#00193D] text-neutral-content flex flex-col justify-center items-center">
       <div className="w-1/2">
         <Link to={"/"}>
-          <img src="assets/ajarinaku.svg" alt="" />
+          <Logo />
         </Link>
         <hr className="w-full bg-gray-200 border-1 dark:bg-gray-700" />
         <div className="flex flex-row gap-28 mt-4">

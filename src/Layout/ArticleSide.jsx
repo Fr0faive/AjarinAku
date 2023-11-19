@@ -18,7 +18,7 @@ const ArticleSide = () => {
       <div className="flex flex-col justify-center gap-3 text-black">
         <div className="mr-[189px] bg-white rounded-lg p-5">
           <span className="text-2xl font-normal">Share</span>
-          <div className="mt-5 flex flex-row gap-3">
+          <div className="mt-5 flex flex-row gap-3 mx-auto">
             <FacebookShareButton url="https://ajarinaku.vercel.app">
               <div className="border-solid border-[#00419E] border-[1.8px] w-[42px] h-[42px] flex justify-center items-center rounded-sm">
                 <FontAwesomeIcon
