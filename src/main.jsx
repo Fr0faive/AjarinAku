@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage.jsx";
 import SignupPage from "./pages/SignupPage";
 import SigninPage from "./pages/SigninPage";
 import "./assets/style.css";
-import ProductPage from "./pages/LandingPage.jsx";
+import LandingPage from "./pages/LandingPage.jsx";
 import ArticlePage from "./pages/ArticlePage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import { AuthProvider } from "./services/auth.context.jsx";
@@ -29,12 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/explore",
     element: <LandingPage />,
-    canActivate: ({ state }) => state.auth.isAuthenticated, // Check authentication status
   },
   {
     path: "/explore/article/:id",
     element: <ArticlePage />,
-    canActivate: ({ state }) => state.auth.isAuthenticated, // Check authentication status
   },
   {
     path: "*",
