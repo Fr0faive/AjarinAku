@@ -11,3 +11,15 @@ export const getArticles = async (callback) => {
       console.log(err);
     });
 };
+
+export const getDetailsArticles = async (id, callback) => {
+  axios
+    .get(`https://fakestoreapi.com/products/${id}`)
+    .then((res) => {
+      console.log(res.data);
+      callback(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

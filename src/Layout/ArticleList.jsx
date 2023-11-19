@@ -43,7 +43,7 @@ const ArticleList = () => {
           <div className="flex flex-wrap gap-[22px] my-[19px]">
             {articles.slice(0, 10).map((article) => (
               <Link
-                to={`/article/${article.id}`}
+                to={`/explore/article/${article.id}`}
                 key={article.id}
                 title="Hallo"
               >
