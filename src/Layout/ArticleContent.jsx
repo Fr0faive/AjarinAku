@@ -37,38 +37,7 @@ const Article = () => {
           </div>
           <div className="divider"></div>
           <div className="grid h-full px-5 py-5 card bg-white rounded-box place-items-center text-sm text-black">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatibus quasi aspernatur possimus nihil enim animi? Iure
-              aperiam, enim ad beatae ipsa adipisci eum, pariatur quis, voluptas
-              blanditiis assumenda voluptate! Necessitatibus id vel laborum non
-              voluptate, itaque, dicta qui aut fuga molestias nesciunt
-              recusandae? Numquam ratione quo illum, amet doloremque dolores,
-              dicta velit, deserunt ipsa accusantium adipisci facere odit quas?
-              Suscipit, magnam voluptatum exercitationem, odio quaerat corrupti
-              iste facilis reiciendis recusandae sit non dolore nam excepturi
-              maxime illo sed aspernatur totam nisi vitae consequatur pariatur
-              molestiae. Ipsa at quisquam ut animi labore cum iste dolores ullam
-              ducimus tempora ea distinctio maiores asperiores harum sapiente
-              nihil non maxime, doloremque corporis sequi facere doloribus
-              iusto, quidem iure. Mollitia architecto sunt optio ad magnam nisi
-              qui possimus minus asperiores, nesciunt accusantium atque
-              reprehenderit excepturi aspernatur deleniti, ea consectetur
-              perferendis commodi unde voluptatibus iusto eum. Officiis atque
-              eum enim saepe pariatur hic quidem, quae dolore cupiditate.
-              Expedita explicabo minus dignissimos nesciunt debitis dolor nemo
-              eos! Odio suscipit repellat recusandae eius? Rem necessitatibus
-              perferendis modi porro architecto laudantium officiis atque?
-              Exercitationem ducimus odit dolor dolore voluptatem sed quis
-              placeat optio eaque rem laborum debitis consequatur tenetur
-              voluptates quisquam reiciendis soluta quia id magnam quo,
-              asperiores dolores aliquam? Aliquid eveniet maxime quaerat aperiam
-              nobis deserunt voluptatibus dicta fuga illum non eos voluptates
-              similique fugiat id quidem, ad impedit! Consequatur minus, ut,
-              incidunt blanditiis iure ipsum dicta quas atque aperiam tempore
-              harum, deleniti et omnis voluptatum expedita nesciunt delectus.
-              Fugit rem doloribus assumenda asperiores. Vel natus eius aliquid.
-            </p>
+            <p>{articles.description}</p>
           </div>
         </div>
       </div>

@@ -92,7 +92,7 @@ const NavigationBar = () => {
               <Link
                 to={item.href}
                 key={item.id}
-                className="text-biruTua text-lg mr-4"
+                className="text-biruTua hover:text-[#20E6E5] text-lg mr-4"
               >
                 {item.name}
               </Link>
