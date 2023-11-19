@@ -3,18 +3,28 @@
 /* eslint-disable no-unused-vars */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { ButtonP } from "../component/Button";
+import { ButtonP, ButtonClick } from "../component/Button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Dialog } from "@headlessui/react";
 
 const NavigationBar = () => {
+  const handleLogout = () => {
+    // Implement logic for handling logout
+    // Misalnya, hapus token dari localStorage
+    localStorage.removeItem("token");
+    window.location.reload();
+
+    // Lakukan sesuatu setelah logout, seperti mengarahkan pengguna ke halaman login
+    console.log("Logout berhasil");
+  };
+
   const navigation = [
     {
       id: 1,
-      name: "Home",
-      href: "/",
+      name: "Randomize",
+      href: "/randomize",
     },
     {
       id: 2,
@@ -23,18 +33,24 @@ const NavigationBar = () => {
     },
     {
       id: 3,
-      name: "Randomize",
-      href: "/randomize",
+      name: "Profile",
+      href: "/profile",
     },
   ];
   const [changeColor, setChangeColor] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const getTokenFromLocalStorage = () => {
+    return localStorage.getItem("token");
+  };
+
+  const token = getTokenFromLocalStorage();
+  const isAuthenticated = !!token;
 
   const changeNavbarColor = () => {
     if (window.scrollY >= 80) {
-      setColorchange(true);
+      setChangeColor(true);
     } else {
-      setColorchange(false);
+      setChangeColor(false);
     }
   };
   window.addEventListener("scroll", changeNavbarColor);
@@ -44,13 +60,13 @@ const NavigationBar = () => {
         className={
           changeColor
             ? "h-24 w-full bg-white flex justify-between items-center"
-            : "h-24 w-full bg-white flex justify-between items-center"
+            : "h-24 w-full  flex justify-between items-center"
         }
       >
         <div className="flex flex-wrap gap-7 lg:gap-14 items-center mx-9">
           <Link to={"/"}>
             <img
-              src= "./assets/ajarinaku.svg"
+              src="./assets/ajarinaku.svg"
               alt="ajarinaku"
               className="h-[51px]"
             />
@@ -73,16 +89,29 @@ const NavigationBar = () => {
           </div>
         </div>
         <div className="hidden lg:flex lg:flex-wrap gap-5 items-center mx-9">
-          {navigation.map((item) => (
-            <Link
-              to={item.href}
-              key={item.id}
-              className="text-biruTua text-lg mr-4"
-            >
-              {item.name}
-            </Link>
-          ))}
-          <ButtonP value="Login" color="[#EFF0F4]" link="/login" />
+          {navigation.map((item) =>
+            (!isAuthenticated && item.id >= 1 && item.id <= 2) ||
+            (isAuthenticated && item.id >= 2 && item.id <= 3) ? (
+              <Link
+                to={item.href}
+                key={item.id}
+                className="text-biruTua text-lg mr-4"
+              >
+                {item.name}
+              </Link>
+            ) : null
+          )}
+          {isAuthenticated ? (
+            // Jika terautentikasi, tampilkan tombol Logout atau halaman lainnya
+            <ButtonClick
+              value="Logout"
+              color="[#EFF0F4]"
+              onClick={handleLogout}
+            />
+          ) : (
+            // Jika tidak terautentikasi, tampilkan tombol Login
+            <ButtonP value="Login" color="[#EFF0F4]" link="/login" />
+          )}
         </div>
         <div className="flex lg:hidden mx-9 items-center gap-5">
           <button

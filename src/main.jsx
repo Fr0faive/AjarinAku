@@ -9,6 +9,9 @@ import "./assets/style.css";
 import ProductPage from "./pages/LandingPage.jsx";
 import ArticlePage from "./pages/ArticlePage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
+import { AuthProvider } from "./services/auth.context.jsx";
+import { Provider } from "react-redux"; // Import Provider
+import store from "./Redux/store.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,14 +33,17 @@ const router = createBrowserRouter([
   {
     path: "/explore",
     element: <ProductPage />,
+    canActivate: ({ state }) => state.auth.isAuthenticated, // Check authentication status
   },
   {
     path: "/article",
     element: <ArticlePage />,
+    canActivate: ({ state }) => state.auth.isAuthenticated, // Check authentication status
   },
   {
     path: "/article/:id",
     element: <ArticlePage />,
+    canActivate: ({ state }) => state.auth.isAuthenticated, // Check authentication status
   },
   {
     path: "*",
@@ -47,6 +53,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </Provider>
   </React.StrictMode>
 );

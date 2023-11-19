@@ -1,33 +1,40 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import InputField from "../component/InputField";
 import { Button, ButtonP } from "../component/Button";
 import { useState } from "react";
+import AuthService from "../services/auth.service";
+import { useAuth } from "../services/auth.context";
 
 const SigninPage = () => {
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-  //   localStorage.setItem("email", e.target.email.value);
-  //   localStorage.setItem("password", e.target.password.value);
-  //   // console.log(e.target.email.value);
-  //   // console.log(e.target.password.value);
-  //   console.log("Form submitted");
-  //   window.location.href = "/product";
-  // };
+  const { loginP } = useAuth();
+  const navigate = useNavigate();
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+    try {
+      const loginResult = await AuthService.loginUser(loginData);
+      console.log("Login berhasil:", loginResult);
+      localStorage.setItem("token", loginResult.token);
+      // Update authentication status using Redux
 
-  async function login(){
-    return fetch('https://fakestoreapi.com/auth/login',{
-      method:'POST',
-      body:JSON.stringify({
-          username: username,
-          password: password
-      })
-  })
-      .then(res=>res.json())
-      .then(json=>console.log(json))
-  }
+      // Redirect to the home page or the previous protected route
+      navigate("/");
+
+      // Store the token in the context
+      loginP(loginResult.token);
+    } catch (error) {
+      console.log(loginData);
+      console.error("Login gagal:", error);
+    }
+  };
+  const handleChange = (e) => {
+    setLoginData({ ...loginData, [e.target.name]: e.target.value });
+  };
+
+  const [loginData, setLoginData] = useState({
+    username: "",
+    password: "",
+  });
 
   return (
     <>
@@ -42,25 +49,20 @@ const SigninPage = () => {
               Welcome to AjarinAku E-Learning Website. Enter your credentials to
               access your account
             </p>
-            <form
-              action="submit"
-              method="post"
-              className="form-control"
-              // onSubmit={handleLogin}
-            >
+            <form className="form-control" onSubmit={handleLogin}>
               <InputField
-                type="email"
+                type="text"
                 placeholder="Email"
                 margin="mb-7"
-                name="email"
-                onChange={(e) => setUsername(e.target.value)}
+                name="username"
+                onChange={handleChange}
               />
               <InputField
                 type="password"
                 placeholder="Password"
                 margin="mb-7"
                 name="password"
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handleChange}
               />
               <div className="flex flex-row justify-between items-center gap-4 mb-7">
                 <div className="flex flex-row items-center gap-3">
@@ -76,7 +78,7 @@ const SigninPage = () => {
                   Forgot Password?
                 </Link>
               </div>
-              <Button value="Log In" color="primary" onClick={login}/>
+              <Button value="Log In" color="primary" />
             </form>
             <div className="inline-flex items-center justify-center w-full gap-4">
               <hr className="w-20 2xl:w-36 my-8 bg-gray-200 border-1 dark:bg-gray-700" />

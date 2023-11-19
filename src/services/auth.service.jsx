@@ -1,23 +1,18 @@
-export const login = async () => {
-  fetch("https://fakestoreapi.com/auth/login", {
-    method: "POST",
-    body: JSON.stringify({
-      username: "mor_2314",
-      password: "83r5^_",
-    }),
-  })
-    .then((res) => res.json())
-    .then((json) => console.log(json));
+import axios from "axios";
+
+const API_URL = "https://fakestoreapi.com"; // Gantilah dengan URL API sesuai kebutuhan
+
+const loginUser = async (loginData) => {
+  try {
+    // Panggil API untuk login menggunakan Axios
+    const response = await axios.post(`${API_URL}/auth/login`, loginData);
+
+    // Mengembalikan respons dari server (misalnya, token atau informasi lainnya)
+    return response.data;
+  } catch (error) {
+    // Menghandle kesalahan selama proses login
+    throw error.response ? error.response.data : error.message;
+  }
 };
 
-export const register = async () => {
-  fetch("https://fakestoreapi.com/auth/login", {
-    method: "POST",
-    body: JSON.stringify({
-      username: "mor_2314",
-      password: "83r5^_",
-    }),
-  })
-    .then((res) => res.json())
-    .then((json) => console.log(json));
-};
+export default { loginUser };
