@@ -14,7 +14,8 @@ const SigninPage = () => {
     try {
       const loginResult = await AuthService.loginUser(loginData);
       console.log("Login berhasil:", loginResult);
-      localStorage.setItem("token", loginResult.token);
+      localStorage.setItem("Authorization", loginResult.token);
+      localStorage.setItem("Roles", loginResult.roles);
       // Update authentication status using Redux
 
       // Redirect to the home page or the previous protected route
@@ -70,9 +71,7 @@ const SigninPage = () => {
                     type="checkbox"
                     className="checkbox checkbox-biruTua border-biruTua"
                   />
-                  <label className="text-md text-gray-900">
-                    Remember me
-                  </label>
+                  <label className="text-md text-gray-900">Remember me</label>
                 </div>
                 <Link to="#" className="text-biruTua hover:underline">
                   Forgot Password?
