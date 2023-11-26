@@ -6,26 +6,24 @@ import AuthService from "../services/auth.service";
 import { useAuth } from "../services/auth.context";
 
 const SigninPage = () => {
-  const { loginP } = useAuth();
+  const [message, setMsg] = useState(null);
+  // const { loginP } = useAuth();
   const navigate = useNavigate();
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    setMsg("");
     try {
       const loginResult = await AuthService.loginUser(loginData);
       console.log("Login berhasil:", loginResult);
-      localStorage.setItem("Authorization", loginResult.token);
-      localStorage.setItem("Roles", loginResult.roles);
-      // Update authentication status using Redux
-
+      localStorage.setItem("Authorization", loginResult.data.token);
+      localStorage.setItem("Roles", loginResult.data.roles);
+      alert("Login Berhasil");
       // Redirect to the home page or the previous protected route
       navigate("/");
-
-      // Store the token in the context
-      loginP(loginResult.token);
     } catch (error) {
       console.log(loginData);
       console.error("Login gagal:", error);
+      setMsg(error.errors);
     }
   };
   const handleChange = (e) => {
@@ -50,10 +48,28 @@ const SigninPage = () => {
               Welcome to AjarinAku E-Learning Website. Enter your credentials to
               access your account
             </p>
+            {message && (
+              <div role="alert" className="alert alert-error">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="stroke-current shrink-0 h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span>{message}</span>
+              </div>
+            )}
             <form className="form-control" onSubmit={handleLogin}>
               <InputField
                 type="text"
-                placeholder="Email"
+                placeholder="Username"
                 margin="mb-3"
                 name="username"
                 onChange={handleChange}
@@ -77,7 +93,7 @@ const SigninPage = () => {
                   Forgot Password?
                 </Link>
               </div>
-              <Button value="Log In" color="primary" />
+              <Button value="Log In" color="primary" type="submit" />
             </form>
             <div className="inline-flex items-center justify-center w-full gap-4">
               <hr className="w-20 2xl:w-36 my-5 bg-gray-200 border-1 dark:bg-gray-700" />
