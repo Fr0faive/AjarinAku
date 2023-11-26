@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 export const Button = (props) => {
-  const { value, color, type, onClick } = props;
+  const { value, color, type, onClick, margin } = props;
   return (
     <button
-      className={`btn btn-${color} btn-outline w-full`}
+      className={`btn btn-${color} btn-outline w-full ${margin}`}
       type={type}
       onClick={onClick}
     >

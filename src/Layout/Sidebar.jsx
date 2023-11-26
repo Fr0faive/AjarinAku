@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Button } from "../component/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGaugeHigh,
@@ -31,32 +30,32 @@ const Sidebar = (props) => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="menu p-10 flex flex-col gap-10  w-80 min-h-full justify-between  rounded-lg text-gray-900">
+        <div className="menu p-8 flex flex-col gap-10 w-[200px] min-h-full justify-between rounded-lg text-gray-900">
           {/* Sidebar content here */}
           <div className="flex flex-col gap-10">
             <Link to={"/dashboard"} className="flex items-center gap-3">
               <FontAwesomeIcon
                 icon={faGaugeHigh}
                 style={{ color: "#ffffff" }}
-                size="2xl"
+                size="lg"
               />
-              <p className="text-white font-normal text-2xl">Dashboard</p>
+              <p className="text-white font-normal text-lg">Dashboard</p>
             </Link>
             <Link to={"/dashboard/pos"} className="flex items-center gap-3">
               <FontAwesomeIcon
                 icon={faThumbtack}
                 style={{ color: "#ffffff" }}
-                size="2xl"
+                size="lg"
               />
-              <p className="text-white font-normal text-2xl">Pos</p>
+              <p className="text-white font-normal text-lg">Post</p>
             </Link>
             <Link to={"/dashboard/media"} className="flex items-center gap-3">
               <FontAwesomeIcon
                 icon={faImage}
-                size="2xl"
+                size="lg"
                 style={{ color: "#ffffff" }}
               />
-              <p className="text-white font-normal text-2xl">Media</p>
+              <p className="text-white font-normal text-lg">Media</p>
             </Link>
             <Link
               to={"/dashboard/kalender"}
@@ -64,10 +63,10 @@ const Sidebar = (props) => {
             >
               <FontAwesomeIcon
                 icon={faCalendar}
-                size="2xl"
+                size="lg"
                 style={{ color: "#ffffff" }}
               />
-              <p className="text-white font-normal text-2xl">Kalender</p>
+              <p className="text-white font-normal text-lg">Kalender</p>
             </Link>
           </div>
           <div className="flex flex-col gap-10">
@@ -78,17 +77,17 @@ const Sidebar = (props) => {
               <FontAwesomeIcon
                 icon={faGear}
                 style={{ color: "#ffffff" }}
-                size="2xl"
+                size="lg"
               />
-              <p className="text-white font-normal text-2xl">Settings</p>
+              <p className="text-white font-normal text-lg">Settings</p>
             </Link>
             <button className="flex items-center gap-3" onClick={() => {}}>
               <FontAwesomeIcon
                 icon={faArrowRightFromBracket}
-                size="2xl"
+                size="lg"
                 style={{ color: "#ffffff" }}
               />
-              <p className="text-white font-normal text-2xl">Logout</p>
+              <p className="text-white font-normal text-lg">Logout</p>
             </button>
           </div>
         </div>
