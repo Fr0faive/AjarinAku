@@ -15,4 +15,9 @@ const loginUser = async (loginData) => {
   }
 };
 
+const logoutUser = async () => {
+  // Panggil API untuk logout menggunakan Axios
+  const response = await axios.delete(`${API_URL}/auth/logout`);
+};
+
 export default { loginUser };

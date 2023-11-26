@@ -12,6 +12,7 @@ import NotFoundPage from "./pages/NotFoundPage.jsx";
 import { AuthProvider } from "./services/auth.context.jsx";
 import { Provider } from "react-redux"; // Import Provider
 import store from "./Redux/store.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/explore/article/:id",
     element: <ArticlePage />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
   },
   {
     path: "*",

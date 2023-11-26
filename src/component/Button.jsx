@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 
 export const Button = (props) => {
-  const { value, color } = props;
+  const { value, color, type, onClick } = props;
   return (
-    <button className={`btn btn-${color} btn-outline w-full`} type="submit">
+    <button
+      className={`btn btn-${color} btn-outline w-full`}
+      type={type}
+      onClick={onClick}
+    >
       {value}
     </button>
   );

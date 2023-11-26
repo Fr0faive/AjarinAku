@@ -41,7 +41,7 @@ const NavigationBar = () => {
   const [changeColor, setChangeColor] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const getTokenFromLocalStorage = () => {
-    return localStorage.getItem("token");
+    return localStorage.getItem("Authorization");
   };
 
   const token = getTokenFromLocalStorage();
