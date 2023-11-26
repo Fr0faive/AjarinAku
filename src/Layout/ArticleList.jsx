@@ -4,18 +4,6 @@ import { getArticles } from "../services/article.service";
 // import { ButtonP } from "../component/Button";
 import { Card } from "../component/Card";
 
-const dataArticle = [
-  {
-    id: 1,
-    title: "Article 1",
-    image: "https://picsum.photos/200/300",
-  },
-  {
-    id: 2,
-    title: "Article 2",
-    image: "https://picsum.photos/200/300",
-  },
-];
 const ArticleList = () => {
   const [articles, setArticles] = useState([]);
 

@@ -4,7 +4,7 @@ import Footer from "../Layout/Footer";
 const HomePage = () => {
   return (
     <>
-      <NavigationBar />
+      <NavigationBar position="fixed" />
       <Hero />
       <Footer />
     </>

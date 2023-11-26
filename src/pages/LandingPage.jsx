@@ -5,7 +5,7 @@ import NavigationBar from "../Layout/NavigationBar";
 const LandingPage = () => {
   return (
     <>
-      <NavigationBar />
+      <NavigationBar position="fixed" />
       <ArticleList />
       <Footer />
     </>

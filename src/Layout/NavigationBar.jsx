@@ -10,7 +10,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Dialog } from "@headlessui/react";
 import Logo from "../component/Logo";
 
-const NavigationBar = () => {
+const NavigationBar = (props) => {
+  const { position } = props;
   const handleLogout = () => {
     // Implement logic for handling logout
     // Misalnya, hapus token dari localStorage
@@ -56,7 +57,7 @@ const NavigationBar = () => {
   };
   window.addEventListener("scroll", changeNavbarColor);
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
+    <header className={`${position} inset-x-0 top-0 z-50 overflow-hidden`}>
       <nav
         className={
           changeColor

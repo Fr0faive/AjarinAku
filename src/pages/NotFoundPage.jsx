@@ -4,7 +4,7 @@ import Footer from "../Layout/Footer";
 const NotFoundPage = () => {
   return (
     <>
-      <NavigationBar />
+      <NavigationBar position="fixed" />
       <div className="flex flex-col justify-center items-center h-screen bg-[#EFF0F4] text-biruTua">
         <h1 className="text-4xl font-bold md:text-9xl md:font-extrabold">
           404 NOT FOUND
