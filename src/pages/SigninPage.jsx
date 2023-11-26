@@ -40,12 +40,12 @@ const SigninPage = () => {
     <>
       <div className="w-full flex flex-wrap h-screen">
         <div className="w-1/3 bg-white flex justify-center items-center h-full">
-          <div className="mx-20">
+          <div className="mx-10">
             <h2 className="text-gray-900 text-[62px] text-start font-semibold">
               <span className="text-biruTua">Sign</span>{" "}
               <span className="text-biruMuda">In</span>
             </h2>
-            <p className="my-6 text-[22px] font-normal text-biruTua mr-14 leading-8">
+            <p className="mt-2 mb-3 text-xl font-normal text-biruTua mr-14 leading-8">
               Welcome to AjarinAku E-Learning Website. Enter your credentials to
               access your account
             </p>
@@ -53,45 +53,45 @@ const SigninPage = () => {
               <InputField
                 type="text"
                 placeholder="Email"
-                margin="mb-7"
+                margin="mb-3"
                 name="username"
                 onChange={handleChange}
               />
               <InputField
                 type="password"
                 placeholder="Password"
-                margin="mb-7"
+                margin="mb-3"
                 name="password"
                 onChange={handleChange}
               />
-              <div className="flex flex-row justify-between items-center gap-4 mb-7">
+              <div className="flex flex-row justify-between items-center gap-4 mb-5">
                 <div className="flex flex-row items-center gap-3">
                   <input
                     type="checkbox"
-                    className="checkbox checkbox-biruTua"
+                    className="checkbox checkbox-biruTua border-biruTua"
                   />
-                  <label className="text-[18px] text-gray-900">
+                  <label className="text-md text-gray-900">
                     Remember me
                   </label>
                 </div>
-                <Link to="#" className="text-biruTua">
+                <Link to="#" className="text-biruTua hover:underline">
                   Forgot Password?
                 </Link>
               </div>
               <Button value="Log In" color="primary" />
             </form>
             <div className="inline-flex items-center justify-center w-full gap-4">
-              <hr className="w-20 2xl:w-36 my-8 bg-gray-200 border-1 dark:bg-gray-700" />
-              <span>or continue with</span>
-              <hr className="w-20 2xl:w-36 my-8 bg-gray-200 border-1 dark:bg-gray-700" />
+              <hr className="w-20 2xl:w-36 my-5 bg-gray-200 border-1 dark:bg-gray-700" />
+              <span className="text-slate-500">or continue with</span>
+              <hr className="w-20 2xl:w-36 my-5 bg-gray-200 border-1 dark:bg-gray-700" />
             </div>
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-row gap-4 ml-14">
               <ButtonP value="Google" color="google" />
               <ButtonP value="Facebook" color="facebook" />
             </div>
-            <p className="mt-16">
+            <p className="mt-3 text-slate-500">
               Don&apos;t have an account?{" "}
-              <Link to={"/register"} className="text-biruTua">
+              <Link to={"/register"} className="text-biruTua hover:underline">
                 Sign Up
               </Link>
             </p>
