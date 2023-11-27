@@ -3,8 +3,6 @@ import InputField from "../component/InputField";
 import { Button, ButtonP } from "../component/Button";
 import { useState } from "react";
 import AuthService from "../services/auth.service";
-import { useAuth } from "../services/auth.context";
-
 const SigninPage = () => {
   const [message, setMsg] = useState(null);
   // const { loginP } = useAuth();
