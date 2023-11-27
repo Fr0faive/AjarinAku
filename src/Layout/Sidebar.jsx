@@ -41,7 +41,7 @@ const Sidebar = (props) => {
               />
               <p className="text-white font-normal text-lg">Dashboard</p>
             </Link>
-            <Link to={"/dashboard/pos"} className="flex items-center gap-3">
+            <Link to={"/dashboard/post"} className="flex items-center gap-3">
               <FontAwesomeIcon
                 icon={faThumbtack}
                 style={{ color: "#ffffff" }}
