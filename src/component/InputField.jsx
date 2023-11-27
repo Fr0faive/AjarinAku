@@ -1,5 +1,5 @@
 const InputField = (props) => {
-  const { name, type, placeholder, margin, onChange, value } = props;
+  const { name, type, placeholder, margin, onChange } = props;
   return (
     <>
       <input
