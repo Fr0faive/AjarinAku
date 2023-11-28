@@ -26,15 +26,15 @@ const PostContent = () => {
   return (
     <form onSubmit={handlePost}>
       <div className="flex flex-col bg-white p-10 rounded-lg gap-4 text-black">
-        <h1 className="text-3xl font-bold">POST CONTENT</h1>
-        <label>Category</label>
+        <label>Nama Kategori</label>
         <InputField
           type="text"
           name="category_name"
-          placeholder="Choose the category"
+          placeholder="Masukkan nama kategori"
+          value={categoryData.category_name}
           onChange={handleChange}
         />
-        <Button value="Post" type="submit" color="primary" />
+        <Button value="Tambahkan" type="submit" color="primary" />
       </div>
     </form>
   );
