@@ -3,6 +3,7 @@ import InputField from "../component/InputField";
 import { Button, ButtonP } from "../component/Button";
 import { useState } from "react";
 import AuthService from "../services/auth.service";
+import logo from "../assets/ajarinaku.svg";
 const SigninPage = () => {
   const [message, setMsg] = useState(null);
   // const { loginP } = useAuth();
@@ -104,7 +105,10 @@ const SigninPage = () => {
             </div>
             <p className="mt-3 text-slate-500">
               Don&apos;t have an account?{" "}
-              <Link to={"/register"} className="text-biruTua hover:underline">
+              <Link
+                to={"/auth/register"}
+                className="text-biruTua hover:underline"
+              >
                 Sign Up
               </Link>
             </p>
@@ -113,7 +117,7 @@ const SigninPage = () => {
         <div className="w-8/12 h-full bg-signInImg bg-cover flex justify-end">
           <div className="mt-12 bg-white h-20 flex items-center max-w-[230px] rounded-l-xl">
             <Link to={"/"}>
-              <img src="assets/ajarinaku.svg" alt="" className="pl-7 mr-3" />
+              <img src={logo} alt="" className="pl-7 mr-3" />
             </Link>
           </div>
         </div>

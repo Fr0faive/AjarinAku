@@ -9,17 +9,19 @@ import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Dialog } from "@headlessui/react";
 import Logo from "../component/Logo";
+import authService from "../services/auth.service";
 
 const NavigationBar = (props) => {
   const { position } = props;
-  const handleLogout = () => {
-    // Implement logic for handling logout
-    // Misalnya, hapus token dari localStorage
-    localStorage.removeItem("token");
-    window.location.reload();
-
-    // Lakukan sesuatu setelah logout, seperti mengarahkan pengguna ke halaman login
-    console.log("Logout berhasil");
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    try {
+      await authService.logoutUser();
+      alert("Logout success");
+      window.location.href = "/";
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const navigation = [
@@ -41,12 +43,8 @@ const NavigationBar = (props) => {
   ];
   const [changeColor, setChangeColor] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const getTokenFromLocalStorage = () => {
-    return localStorage.getItem("Authorization");
-  };
 
-  const token = getTokenFromLocalStorage();
-  const isAuthenticated = !!token;
+  const isAuthenticated = localStorage.getItem("Authorization");
 
   const changeNavbarColor = () => {
     if (window.scrollY >= 80) {
@@ -108,7 +106,7 @@ const NavigationBar = (props) => {
             />
           ) : (
             // Jika tidak terautentikasi, tampilkan tombol Login
-            <ButtonP value="Login" color="[#EFF0F4]" link="/login" />
+            <ButtonP value="Login" color="bg-biruTua" link="/auth/login" />
           )}
         </div>
         <div className="flex lg:hidden mx-9 items-center gap-5">

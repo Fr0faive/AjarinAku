@@ -15,6 +15,24 @@ const loginUser = async (loginData) => {
   }
 };
 
+const getUserData = async () => {
+  try {
+    // Panggil API untuk mendapatkan data user menggunakan Axios
+    const response = await axios.get(`${API_URL}/api/users/current`, {
+      headers: {
+        Authorization: `${token}`,
+      },
+    });
+    if (!token) {
+      throw new Error("Token not found");
+    }
+    return response.data;
+  } catch (error) {
+    // Menghandle kesalahan selama proses mendapatkan data user
+    throw error.response ? error.response.data : error.message;
+  }
+};
+
 const registerUser = async (registerData) => {
   try {
     // Panggil API untuk register menggunakan Axios
@@ -29,8 +47,29 @@ const registerUser = async (registerData) => {
 };
 
 const logoutUser = async () => {
-  // Panggil API untuk logout menggunakan Axios
-  const response = await axios.delete(`${API_URL}/auth/logout`);
+  try {
+    // Panggil API untuk logout menggunakan Axios
+
+    if (!token) {
+      throw new Error("Token not found");
+    }
+
+    // Panggil API untuk logout dengan menyertakan token dalam header Authorization
+    await axios.delete(`${API_URL}/api/users/logout`, {
+      headers: {
+        Authorization: `${token}`,
+      },
+    });
+
+    // Hapus token dari localStorage
+    localStorage.removeItem("Authorization");
+    localStorage.removeItem("Roles");
+
+    console.log("Logout berhasil");
+  } catch (error) {
+    // Menghandle kesalahan selama proses logout
+    throw error.response ? error.response.data : error.message;
+  }
 };
 
-export default { loginUser, registerUser, logoutUser };
+export default { loginUser, registerUser, logoutUser, getUserData };

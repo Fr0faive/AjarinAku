@@ -3,6 +3,7 @@ import InputField from "../component/InputField";
 import { Button } from "../component/Button";
 import authService from "../services/auth.service";
 import { useState } from "react";
+import logo from "../assets/ajarinaku.svg";
 
 const SignupPage = () => {
   const [message, setMsg] = useState(null);
@@ -36,7 +37,7 @@ const SignupPage = () => {
         <div className="w-8/12 h-full bg-signUpImg bg-cover">
           <div className="mt-12 bg-white h-20 flex items-center max-w-[230px] rounded-r-xl">
             <Link to={"/"}>
-              <img src="assets/ajarinaku.svg" alt="" className="pr-7 ml-4" />
+              <img src={logo} alt="" className="pr-7 ml-4" />
             </Link>
           </div>
         </div>
@@ -127,7 +128,7 @@ const SignupPage = () => {
             </form>
             <p className="mt-7 text-black">
               Already have an account?{" "}
-              <Link to={"/login"} className="text-biruTua">
+              <Link to={"/auth/login"} className="text-biruTua">
                 Sign In
               </Link>
             </p>

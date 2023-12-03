@@ -14,6 +14,8 @@ import { Provider } from "react-redux"; // Import Provider
 import store from "./Redux/store.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Post from "./pages/Post.jsx";
+import PrivateRoutes from "./utils/private.routes.jsx";
+import IsAuth from "./utils/isAuth.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,12 +23,18 @@ const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: "/register",
-    element: <SignupPage />,
-  },
-  {
-    path: "/login",
-    element: <SigninPage />,
+    path: "/auth",
+    element: <IsAuth />,
+    children: [
+      {
+        path: "/auth/login",
+        element: <SigninPage />,
+      },
+      {
+        path: "/auth/register",
+        element: <SignupPage />,
+      },
+    ],
   },
   {
     path: "/explore",
@@ -38,11 +46,17 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
-  },
-  {
-    path: "/dashboard/post",
-    element: <Post />,
+    element: <PrivateRoutes />,
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "/dashboard/post",
+        element: <Post />,
+      },
+    ],
   },
   {
     path: "*",
