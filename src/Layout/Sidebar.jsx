@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 import {
   faGaugeHigh,
   faImage,
@@ -11,6 +12,7 @@ import {
 
 const Sidebar = (props) => {
   const { children } = props;
+  
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -33,6 +35,7 @@ const Sidebar = (props) => {
         <div className="menu p-8 flex flex-col gap-10 w-[200px] min-h-full justify-between rounded-lg text-gray-900">
           {/* Sidebar content here */}
           <div className="flex flex-col gap-10">
+            {/* Dashboard */}
             <Link to={"/dashboard"} className="flex items-center gap-3">
               <FontAwesomeIcon
                 icon={faGaugeHigh}
@@ -41,15 +44,47 @@ const Sidebar = (props) => {
               />
               <p className="text-white font-normal text-lg">Dashboard</p>
             </Link>
-            <Link to={"/dashboard/post"} className="flex items-center gap-3">
+            {/* Post */}
+            <div className="flex items-center gap-3 relative">
+              <Link to = {"/dashboard/post"} className="flex items-center gap-3">
               <FontAwesomeIcon
                 icon={faThumbtack}
                 style={{ color: "#ffffff" }}
                 size="lg"
               />
-              <p className="text-white font-normal text-lg">Post</p>
-            </Link>
-            <Link to={"/dashboard/media"} className="flex items-center gap-3">
+              <p
+                className="text-white font-normal text-lg"
+              >
+                Post
+              </p>
+              </Link>
+              {/* Dropdown content */}
+              <div
+                className="absolute top-full left-0 mt-2 w-full rounded-lg bg-[#061C40] px-3 py-2"
+              >
+                <Link
+                  to={"/dashboard/post/all-post"}
+                  className="block text-white text-xs mb-3"
+                >
+                  Semua Post
+                </Link>
+                <Link
+                  to={"/dashboard/post/add-post"}
+                  className="block text-white text-xs mb-3"
+                >
+                  Tambah Post
+                </Link>
+                <Link
+                  to={"/dashboard/post/add-category"}
+                  className="block text-white text-xs"
+                >
+                  Tambah Kategori
+                </Link>
+                {/* Add more dropdown items as needed */}
+              </div>
+            </div>
+            {/* Media */}
+            <Link to={"/dashboard/media"} className="flex items-center gap-3 mt-20">
               <FontAwesomeIcon
                 icon={faImage}
                 size="lg"
