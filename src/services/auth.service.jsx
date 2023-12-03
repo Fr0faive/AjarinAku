@@ -2,6 +2,8 @@ import axios from "axios";
 
 const API_URL = "http://localhost:3000"; // Gantilah dengan URL API sesuai kebutuhan
 
+const token = localStorage.getItem("Authorization");
+
 const loginUser = async (loginData) => {
   try {
     // Panggil API untuk login menggunakan Axios
