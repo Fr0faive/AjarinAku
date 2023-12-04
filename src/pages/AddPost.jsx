@@ -1,7 +1,6 @@
 import DashboardLayout from "../Layout/DashboardLayout";
 
-const Post = () => {
+const AddPost = () => {
   return <DashboardLayout></DashboardLayout>;
 };
-
-export default Post;
+export default AddPost;

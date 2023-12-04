@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
         biruTua: "#00419E",
+        biruDark: "#002B68",
         biruMuda: "#20E6E5",
       },
       backgroundImage: {
@@ -13,5 +14,5 @@ export default {
       },
     },
   },
-  plugins: [require("daisyui"),],
+  plugins: [require("daisyui")],
 };

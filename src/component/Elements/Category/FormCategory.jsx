@@ -1,16 +1,15 @@
 import { useState } from "react";
-import { Button } from "../component/Button";
-import InputField from "../component/InputField";
-import CategoryService from "../services/category.service";
+import { Button } from "../../Button";
+import InputField from "../../InputField";
+import CategoryService from "../../../services/category.service";
 
-const PostContent = () => {
+const FormCategory = () => {
   const handlePost = async (e) => {
     e.preventDefault();
     console.log(categoryData);
-    const token = localStorage.getItem("Authorization");
     console.log(token);
     try {
-      const result = await CategoryService.createCategory(categoryData, token);
+      const result = await CategoryService.createCategory(categoryData);
       console.log(result);
       alert("Category created successfully");
     } catch (error) {
@@ -40,4 +39,4 @@ const PostContent = () => {
   );
 };
 
-export default PostContent;
+export default FormCategory;

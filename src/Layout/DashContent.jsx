@@ -18,7 +18,6 @@ const DashContent = () => {
   ];
 
   const [articles, setArticles] = useState([]);
-
   useEffect(() => {
     getArticles((data) => {
       setArticles(data);

@@ -1,7 +1,7 @@
 import { Button } from "./Button";
 
 const Modal = (props) => {
-  const { children } = props;
+  const { children, title } = props;
   return (
     <>
       <Button
@@ -19,7 +19,7 @@ const Modal = (props) => {
               ✕
             </button>
           </form>
-          <h3 className="text-3xl font-bold text-black">Tambahkan Kategori</h3>
+          <h3 className="text-3xl font-bold text-black">{title}</h3>
           {children}
         </div>
       </dialog>

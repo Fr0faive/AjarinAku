@@ -9,13 +9,12 @@ import "./assets/style.css";
 import LandingPage from "./pages/LandingPage.jsx";
 import ArticlePage from "./pages/ArticlePage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
-import { AuthProvider } from "./services/auth.context.jsx";
-import { Provider } from "react-redux"; // Import Provider
-import store from "./Redux/store.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Post from "./pages/Post.jsx";
 import PrivateRoutes from "./utils/private.routes.jsx";
 import IsAuth from "./utils/isAuth.jsx";
+import AddPost from "./pages/AddPost.jsx";
+import CategoryPage from "./pages/CategoryPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +54,14 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/post",
         element: <Post />,
+      },
+      {
+        path: "/dashboard/add-post",
+        element: <AddPost />,
+      },
+      {
+        path: "/dashboard/category-post",
+        element: <CategoryPage />,
       },
     ],
   },
