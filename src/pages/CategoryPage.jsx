@@ -1,5 +1,5 @@
 import DashboardLayout from "../Layout/DashboardLayout";
-import CategoryElement from "../component/Elements/Category/CategoryElement";
+import CategoryElement from "../components/Elements/Category/CategoryElement";
 
 const CategoryPage = () => {
   return (

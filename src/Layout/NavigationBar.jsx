@@ -3,12 +3,12 @@
 /* eslint-disable no-unused-vars */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { ButtonP, ButtonClick } from "../component/Button";
+import { ButtonP, ButtonClick } from "../components/Button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Dialog } from "@headlessui/react";
-import Logo from "../component/Logo";
+import Logo from "../components/Logo";
 import authService from "../services/auth.service";
 
 const NavigationBar = (props) => {

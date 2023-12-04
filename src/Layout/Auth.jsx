@@ -1,5 +1,5 @@
 /* eslint-disable react/no-children-prop */
-import InputField from "../component/InputField";
+import InputField from "../components/InputField";
 
 const Auth = () => {
   return (

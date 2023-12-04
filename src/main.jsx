@@ -10,7 +10,7 @@ import LandingPage from "./pages/LandingPage.jsx";
 import ArticlePage from "./pages/ArticlePage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
-import Post from "./pages/Post.jsx";
+import AllPost from "./pages/AllPost.jsx";
 import PrivateRoutes from "./utils/private.routes.jsx";
 import IsAuth from "./utils/isAuth.jsx";
 import AddPost from "./pages/AddPost.jsx";
@@ -52,8 +52,8 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "/dashboard/post",
-        element: <Post />,
+        path: "/dashboard/all-post",
+        element: <AllPost />,
       },
       {
         path: "/dashboard/add-post",

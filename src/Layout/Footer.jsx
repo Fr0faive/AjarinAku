@@ -2,7 +2,7 @@ import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faM, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import Logo from "../component/Logo";
+import Logo from "../components/Logo";
 
 const Footer = () => {
   const dataLink = [

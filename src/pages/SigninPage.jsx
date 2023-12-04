@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
-import InputField from "../component/InputField";
-import { Button, ButtonP } from "../component/Button";
+import InputField from "../components/InputField";
+import { Button, ButtonP } from "../components/Button";
 import { useState } from "react";
 import AuthService from "../services/auth.service";
 import logo from "../assets/ajarinaku.svg";

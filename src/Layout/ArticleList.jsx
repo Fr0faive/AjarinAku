@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getArticles } from "../services/article.service";
 // import { ButtonP } from "../component/Button";
-import { Card } from "../component/Card";
+import { Card } from "../components/Card";
 
 const ArticleList = () => {
   const [articles, setArticles] = useState([]);

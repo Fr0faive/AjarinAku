@@ -31,18 +31,18 @@ const Sidebar = () => {
               className="ml-1 mr-1"
               size="xl"
             />
-            <span>Pos</span>
+            <span>Post</span>
           </div>
           {isDropdownOpen && (
             <ul className="pt-4">
               <li className="py-2 ">
-                <Link to="/dashboard/post">Semua Pos</Link>
+                <Link to="/dashboard/all-post">Semua Pos</Link>
               </li>
               <li className="py-2 ">
                 <Link to="/dashboard/add-post">Tambah Pos Baru</Link>
               </li>
               <li className="py-2 ">
-                <Link to="/dashboard/category-post">Category</Link>
+                <Link to="/dashboard/category-post">Kategori</Link>
               </li>
             </ul>
           )}

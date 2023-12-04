@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import InputField from "../component/InputField";
-import { Button } from "../component/Button";
+import InputField from "../components/InputField";
+import { Button } from "../components/Button";
 import authService from "../services/auth.service";
 import { useState } from "react";
 import logo from "../assets/ajarinaku.svg";
