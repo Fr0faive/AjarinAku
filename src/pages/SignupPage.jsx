@@ -21,7 +21,7 @@ const SignupPage = () => {
       const signupResult = await authService.registerUser(signupData);
       console.log("Signup berhasil:", signupResult);
       alert("Signup berhasil");
-      setMsg("Registrasi berhasil");
+      window.location.href = "/";
     } catch (error) {
       console.error("Signup gagal:", error.errors);
       setMsg(error.errors);

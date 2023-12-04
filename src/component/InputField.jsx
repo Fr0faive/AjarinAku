@@ -6,7 +6,7 @@ const InputField = (props) => {
         name={name}
         type={type}
         placeholder={placeholder}
-        className={`input input-bordered input-info bg-white w-full ${margin}`}
+        className={`input input-bordered input-info bg-white w-full text-gray-900 ${margin}`}
         onChange={onChange}
       />
     </>

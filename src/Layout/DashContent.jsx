@@ -7,13 +7,13 @@ const DashContent = () => {
       id: 1,
       title: "Total Articles",
       value: "20",
-      image: "./assets/book.png",
+      image: "/assets/book.png",
     },
     {
       id: 2,
       title: "Total Users",
       value: "20",
-      image: "./assets/person.png",
+      image: "/assets/person.png",
     },
   ];
 
@@ -32,8 +32,8 @@ const DashContent = () => {
           <div className="flex flex-wrap justify-around gap-5 items-center">
             {dataDisplay.map((data) => (
               <div className="indicator">
-                <span className="indicator-item right-10">
-                  <img src={data.image} style={{ width: "100px" }} />
+                <span className="indicator-item right-16">
+                  <img src={data.image} alt={data.title} className="w-36" />
                 </span>
                 <div className="flex flex-col gap-5 p-9 justify-center w-72 h-40 bg-white rounded-lg">
                   <h1 className="text-black font-xl text-2xl -ml-2 font-semibold">

@@ -101,7 +101,7 @@ const NavigationBar = (props) => {
             // Jika terautentikasi, tampilkan tombol Logout atau halaman lainnya
             <ButtonClick
               value="Logout"
-              color="[#EFF0F4]"
+              color="bg-biruTua"
               onClick={handleLogout}
             />
           ) : (
