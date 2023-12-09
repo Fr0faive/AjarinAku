@@ -4,8 +4,13 @@ import TextEditor from "../components/Editor";
 import InputField from "../components/InputField";
 import Select from "../components/Select";
 import cross from "../assets/cross.svg";
+import { useState } from "react";
 
 const AddPost = () => {
+  const [dataArticle, setDataArticle] = useState([]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <DashboardLayout>
       <div className="p-20 lg:px-52 gap-30 h-auto bg-[#EFF0F4]">
