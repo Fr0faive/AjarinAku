@@ -1,11 +1,11 @@
 import React from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
-const Editor = ({ onEditorChange }) => {
+const TextEditor = ({ onEditorChange }) => {
   return (
     <Editor
-      apiKey="YOUR_TINYMCE_API_KEY"
-      initialValue="<p>Initial content</p>"
+      apiKey="k155dz1h9ka9jvfa2v1y5w9zzsitm4ucg9hjb750412ng481"
+      initialValue="<p>Masukan isi artikel</p>"
       init={{
         height: 500,
         menubar: false,
@@ -25,4 +25,4 @@ const Editor = ({ onEditorChange }) => {
   );
 };
 
-export default Editor;
+export default TextEditor;

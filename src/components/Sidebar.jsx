@@ -18,7 +18,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="bg-biruTua text-white h-screen w-48 flex flex-col justify-between">
+    <div className="bg-biruTua text-white h-auto w-48 flex flex-col justify-between">
       <ul className="overflow-y-auto py-4 flex flex-col gap-2">
         <li className="p-4 flex items-center">
           <FontAwesomeIcon icon={faGaugeHigh} className="mr-2" size="xl" />

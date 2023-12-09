@@ -10,7 +10,7 @@ const CategoryElement = () => {
     });
   }, []);
   return (
-    <div className="flex flex-col justify-center items-center text-gray-900">
+    <div className="flex flex-col justify-center items-center h-screen bg-[#EFF0F4] text-gray-900">
       <h1>Category</h1>
       <table>
         <thead>
