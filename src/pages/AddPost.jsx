@@ -7,9 +7,46 @@ import cross from "../assets/cross.svg";
 import { useState } from "react";
 
 const AddPost = () => {
-  const [dataArticle, setDataArticle] = useState([]);
+  const [dataArticle, setDataArticle] = useState({
+    title: "",
+    content: "",
+    description: "",
+    category_id: "",
+    image: null,
+  });
+
+  const handleCategoryChange = (event) => {
+    setDataArticle({
+      ...dataArticle,
+      category_id: event.target.value,
+    });
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setDataArticle({
+      ...dataArticle,
+      image: file,
+    });
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setDataArticle((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleEditorChange = (content, editor) => {
+    setDataArticle({
+      ...dataArticle,
+      content: content,
+    });
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(dataArticle);
   };
   return (
     <DashboardLayout>
@@ -23,6 +60,7 @@ const AddPost = () => {
             name="title"
             type="text"
             placeholder="Masukan judul artikel"
+            onChange={handleInputChange}
           />
           <InputField
             label="Deskripsi"
@@ -30,14 +68,15 @@ const AddPost = () => {
             type="text"
             placeholder="Masukan deskripsi artikel"
             height="h-32"
+            onChange={handleInputChange}
           />
           <div className="flex flex-wrap gap-2 items-center">
             <h2 className="text-black font-medium text-3xl">
               Kategori Artikel
             </h2>
-            <Select />
+            <Select onChange={handleCategoryChange} />
           </div>
-          <TextEditor />
+          <TextEditor onEditorChange={handleEditorChange} />
           <div className="flex justify-between items-center">
             <div className="flex flex-wrap gap-10 items-center">
               <h2 className="text-black font-medium text-3xl">Impor Media</h2>
@@ -52,6 +91,7 @@ const AddPost = () => {
                     id="dropzone-file"
                     className="hidden"
                     accept="image/*"
+                    onChange={handleImageChange}
                   />
                 </label>
               </div>
@@ -61,6 +101,7 @@ const AddPost = () => {
               type="submit"
               width="w-40"
               color="bg-biruTua"
+              onClick={handleSubmit}
             />
           </div>
         </form>
