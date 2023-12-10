@@ -4,7 +4,7 @@ import { getAllCategory } from "../services/category.service";
 const Select = (props) => {
   const [dataOption, setDataOption] = useState([]);
   console.log(dataOption);
-  const { onChange, value } = props;
+  const { onChange } = props;
   useEffect(() => {
     getAllCategory((data) => {
       setDataOption(data);

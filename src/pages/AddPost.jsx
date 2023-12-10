@@ -82,7 +82,7 @@ const AddPost = () => {
               <h2 className="text-black font-medium text-3xl">Impor Media</h2>
               <div className="flex items-center justify-center ">
                 <label
-                  for="dropzone-file"
+                  htmlFor="dropzone-file"
                   className="flex justify-center items-center border-dotted rounded-xl border-2 border-[#00419E] bg-white w-[100px] h-[100px]"
                 >
                   <img src={cross} alt="cross" className="w-10" />

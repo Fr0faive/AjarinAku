@@ -19,7 +19,7 @@ const TextEditor = ({ onEditorChange }) => {
           menubar: false,
           external_plugins: {
             tiny_mce_wiris:
-              "node_modules/@wiris/mathtype-tinymce4/plugin.min.js",
+              "../../node_modules/@wiris/mathtype-tinymce4/plugin.min.js",
           },
           plugins: [
             "powerpaste casechange searchreplace autolink directionality advcode visualblocks visualchars image link media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker editimage help formatpainter permanentpen charmap tinycomments linkchecker emoticons advtable export print autosave",
