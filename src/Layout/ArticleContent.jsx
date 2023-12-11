@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getDetailsArticles } from "../services/article.service";
+import articleService from "../services/article.service";
 
 const Article = () => {
   const { id } = useParams();
   const [articles, setArticles] = useState({});
   useEffect(() => {
-    getDetailsArticles(
+    articleService.getDetailsArticles(
       id,
       (data) => {
         setArticles(data);

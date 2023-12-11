@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getArticles } from "../services/article.service";
+import articleService from "../services/article.service";
 
 const DashContent = () => {
   const dataDisplay = [
@@ -19,7 +19,7 @@ const DashContent = () => {
 
   const [articles, setArticles] = useState([]);
   useEffect(() => {
-    getArticles((data) => {
+    articleService.getArticles((data) => {
       setArticles(data);
     });
   }, []);

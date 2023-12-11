@@ -4,17 +4,22 @@ import TextEditor from "../components/Editor";
 import InputField from "../components/InputField";
 import Select from "../components/Select";
 import cross from "../assets/cross.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import articleService from "../services/article.service";
 
 const AddPost = () => {
   const [dataArticle, setDataArticle] = useState({
     title: "",
-    content: "",
     description: "",
+    content: "",
     category_id: "",
+    user_id: "",
     image: null,
   });
 
+  useEffect(() => {
+    getUser(data);
+  }, []);
   const handleCategoryChange = (event) => {
     setDataArticle({
       ...dataArticle,
@@ -22,19 +27,20 @@ const AddPost = () => {
     });
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    setDataArticle({
-      ...dataArticle,
-      image: file,
-    });
-  };
+  // const handleImageChange = (e) => {
+  //   const file = e.target.files[0];
+  //   setDataArticle({
+  //     ...dataArticle,
+  //     image: file,
+  //   });
+  // };
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, files } = e.target;
+
     setDataArticle((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: type === "file" ? files[0] : value,
     }));
   };
 
@@ -47,6 +53,12 @@ const AddPost = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(dataArticle);
+    try {
+      const result = articleService.addArticle(dataArticle);
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <DashboardLayout>
@@ -54,7 +66,7 @@ const AddPost = () => {
         <h1 className="text-black font-semibold text-5xl mb-3">
           Tambah Artikel Baru
         </h1>
-        <form className="form-control gap-4">
+        <form className="form-control gap-4" encType="multipart/form-data">
           <InputField
             label="Judul"
             name="title"
@@ -90,8 +102,9 @@ const AddPost = () => {
                     type="file"
                     id="dropzone-file"
                     className="hidden"
+                    name="image"
                     accept="image/*"
-                    onChange={handleImageChange}
+                    onChange={handleInputChange}
                   />
                 </label>
               </div>
