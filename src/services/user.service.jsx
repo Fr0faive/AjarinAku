@@ -19,4 +19,21 @@ const getUsers = async (callback) => {
     });
 };
 
-export default { getUsers };
+const getUserById = async (id, callback) => {
+  axios
+    .get(`${API_URL}/api/users/find/${id}`, {
+      headers: {
+        Authorization: `${token}`,
+        "Content-Type": "application/json",
+      },
+    })
+    .then((res) => {
+      console.log(res.data.data);
+      callback(res.data.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export default { getUsers, getUserById };

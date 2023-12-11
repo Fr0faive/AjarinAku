@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { getAllCategory } from "../../../services/category.service";
+import categoryService from "../../../services/category.service";
 
 const CategoryElement = () => {
   const [dataCategory, setDataCategory] = useState([]);
 
   useEffect(() => {
-    getAllCategory((data) => {
+    categoryService.getAllCategory((data) => {
       setDataCategory(data);
     });
   }, []);

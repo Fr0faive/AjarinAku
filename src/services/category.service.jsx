@@ -58,4 +58,4 @@ const getCategory = async (id, token) => {
   }
 };
 
-export { createCategory, getAllCategory, getCategory };
+export default { createCategory, getAllCategory, getCategory };

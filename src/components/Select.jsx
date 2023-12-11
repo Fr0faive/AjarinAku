@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { getAllCategory } from "../services/category.service";
+import categoryService from "../services/category.service";
 
 const Select = (props) => {
   const [dataOption, setDataOption] = useState([]);
   console.log(dataOption);
   const { onChange } = props;
   useEffect(() => {
-    getAllCategory((data) => {
+    categoryService.getAllCategory((data) => {
       setDataOption(data);
     });
   }, []);
