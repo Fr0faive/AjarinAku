@@ -12,7 +12,7 @@ const ArticleList = () => {
       setArticles(data);
     });
     // setArticles(dataArticle);
-  });
+  }, []);
   return (
     <div className="min-h-screen bg-[#EFF0F4] relative isolate px-6 pt-14 lg:px-8 flex">
       <div className="w-4/6">
@@ -36,14 +36,14 @@ const ArticleList = () => {
                 title="Hallo"
               >
                 <div className="card w-[180px] max-h-56 bg-white shadow-xl overflow-hidden">
-                  <figure className="h-1/3">
+                  <figure className="h-full">
                     <img
                       src={article.image}
                       alt="Shoes"
-                      className="w-1/4 m-6"
+                      className="w-full m-6"
                     />
                   </figure>
-                  <div className="card-body h-1/3">
+                  <div className="card-body h-full p-5">
                     <div className="badge badge-secondary">NEW</div>
                     <h2 className="text-black font-medium text-xs flex items-center gap-2">
                       {article.title.substring(0, 20)}...

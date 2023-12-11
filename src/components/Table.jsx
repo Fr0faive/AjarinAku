@@ -1,38 +1,47 @@
 import EditIcon from "./Icons/EditIcon";
 import DeleteIcon from "./Icons/DeleteIcon";
+import { useEffect, useState } from "react";
+import articleService from "../services/article.service";
 
 const Table = () => {
-  const dataTable = [
-    {
-      id: 1,
-      title: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, in.",
-      author: "Faikar",
-      category: "Kimia",
-    },
-    {
-      id: 2,
-      title: "Lorem, ipsum dolor sit amet consectetur",
-      author: "Abel",
-      category: "Matematika",
-    },
-    {
-      id: 3,
-      title: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, in.",
-      author: "Kirei",
-      category: "Biologi",
-    },
-    {
-      id: 4,
-      title: "Lorem, ipsum dolor sit",
-      author: "Mas Abel",
-      category: "Ilmu Komputer",
-    },
-  ];
+  const [dataArticle, setDataArticle] = useState([]);
+  useEffect(() => {
+    articleService.getArticles((data) => {
+      setDataArticle(data);
+    });
+  }, []);
 
-  // const [data, setData] = useState([]);
-  // useEffect(() => {
-  //   setData(dataTable);
-  // });
+  // Persiapan data yang rapihnya
+  //  const [dataArticle, setDataArticle] = useState([]);
+  //  const [userData, setUserData] = useState({});
+  //  const [categoryData, setCategoryData] = useState({});
+
+  //  useEffect(() => {
+  //    // Fetch articles
+  //    articleService.getArticles((data) => {
+  //      setDataArticle(data);
+
+  //      // Fetch user data
+  //      const userIds = data.map((article) => article.userId);
+  //      userService.getUsersByIds(userIds, (users) => {
+  //        const userMap = {};
+  //        users.forEach((user) => {
+  //          userMap[user.id] = user.name;
+  //        });
+  //        setUserData(userMap);
+  //      });
+
+  //      // Fetch category data
+  //      const categoryIds = data.map((article) => article.categoryId);
+  //      categoryService.getCategoriesByIds(categoryIds, (categories) => {
+  //        const categoryMap = {};
+  //        categories.forEach((category) => {
+  //          categoryMap[category.id] = category.name;
+  //        });
+  //        setCategoryData(categoryMap);
+  //      });
+  //    });
+  //  }, []);
 
   return (
     <>
@@ -47,14 +56,22 @@ const Table = () => {
               <th>Hapus</th>
             </tr>
           </thead>
-          {dataTable.map((data) => (
+          {dataArticle.map((data) => (
             <tbody>
               <tr className="text-biruTua">
                 <td>{data.title}</td>
-                <td>{data.author}</td>
-                <td>{data.category}</td>
-                <td className="text-center"><button><EditIcon/></button></td>
-                <td className="text-center"><button><DeleteIcon/></button></td>
+                <td>{data.userId}</td>
+                <td>{data.categoryId}</td>
+                <td className="text-center">
+                  <button>
+                    <EditIcon />
+                  </button>
+                </td>
+                <td className="text-center">
+                  <button>
+                    <DeleteIcon />
+                  </button>
+                </td>
               </tr>
             </tbody>
           ))}

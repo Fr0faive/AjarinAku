@@ -47,17 +47,13 @@ const DashContent = () => {
           </div>
           <div className="flex flex-col mx-24 gap-5">
             <h1 className="text-black font-medium text-2xl">Recent Article</h1>
-            <div className="flex flex-wrap gap-5">
+            <div className="flex flex-wrap gap-20">
               {articles.slice(0, 4).map((article) => (
                 <div className="card w-[180px] max-h-56 bg-white shadow-xl overflow-hidden">
-                  <figure className="h-1/3">
-                    <img
-                      src={article.image}
-                      alt="Shoes"
-                      className="w-1/4 m-6"
-                    />
+                  <figure className="h-auto">
+                    <img src={article.image} alt="Shoes" className="w-full" />
                   </figure>
-                  <div className="card-body h-1/3">
+                  <div className="card-body h-auto p-5">
                     <div className="badge badge-secondary">NEW</div>
                     <h2 className="text-black font-medium text-xs flex items-center gap-2">
                       {article.title.substring(0, 20)}...

@@ -5,10 +5,10 @@ const token = localStorage.getItem("Authorization");
 
 const getArticles = async (callback) => {
   axios
-    .get("https://fakestoreapi.com/products")
+    .get(`${API_URL}/api/articles`)
     .then((res) => {
-      console.log(res.data);
-      callback(res.data);
+      console.log(res.data.data);
+      callback(res.data.data);
     })
     .catch((err) => {
       console.log(err);
@@ -17,10 +17,10 @@ const getArticles = async (callback) => {
 
 const getDetailsArticles = async (id, callback) => {
   axios
-    .get(`https://fakestoreapi.com/products/${id}`)
+    .get(`${API_URL}/api/articles/${id}`)
     .then((res) => {
-      console.log(res.data);
-      callback(res.data);
+      console.log(res.data.data);
+      callback(res.data.data);
     })
     .catch((err) => {
       console.log(err);
