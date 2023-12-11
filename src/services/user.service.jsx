@@ -1,12 +1,22 @@
 import axios from "axios";
 
-const getUsers = async () => {
+const API_URL = "http://localhost:3000";
+const token = localStorage.getItem("Authorization");
+const getUsers = async (callback) => {
   axios
-    .get("http://localhost:5000/users")
+    .get(`${API_URL}/api/users/current`, {
+      headers: {
+        Authorization: `${token}`,
+        "Content-Type": "application/json",
+      },
+    })
     .then((res) => {
-      console.log(res.data);
+      console.log(res.data.data);
+      callback(res.data.data);
     })
     .catch((err) => {
       console.log(err);
     });
 };
+
+export default { getUsers };

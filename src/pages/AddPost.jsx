@@ -6,6 +6,7 @@ import Select from "../components/Select";
 import cross from "../assets/cross.svg";
 import { useEffect, useState } from "react";
 import articleService from "../services/article.service";
+import userService from "../services/user.service";
 
 const AddPost = () => {
   const [dataArticle, setDataArticle] = useState({
@@ -18,7 +19,13 @@ const AddPost = () => {
   });
 
   useEffect(() => {
-    getUser(data);
+    userService.getUsers((data) => {
+      // console.log("ini user id:", data.user_id);
+      setDataArticle({
+        ...dataArticle,
+        user_id: data.user_id,
+      });
+    });
   }, []);
   const handleCategoryChange = (event) => {
     setDataArticle({
