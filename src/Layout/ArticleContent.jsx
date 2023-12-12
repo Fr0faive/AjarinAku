@@ -5,15 +5,21 @@ import articleService from "../services/article.service";
 const Article = () => {
   const { id } = useParams();
   const [articles, setArticles] = useState({});
+
   useEffect(() => {
-    articleService.getDetailsArticles(
-      id,
-      (data) => {
-        setArticles(data);
-      },
-      [id]
-    );
-  });
+    articleService.getDetailsArticles(id, (data) => {
+      setArticles(data);
+    });
+  }, []);
+  // useEffect(() => {
+  //   articleService.getDetailsArticles(
+  //     id,
+  //     (data) => {
+  //       setArticles(data);
+  //     },
+  //     [id]
+  //   );
+  // });
   console.log(articles);
   return (
     <>

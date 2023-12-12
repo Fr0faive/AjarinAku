@@ -19,6 +19,23 @@ const getUsers = async (callback) => {
     });
 };
 
+const getAllUsers = async (callback) => {
+  axios
+    .get(`${API_URL}/api/users/all`, {
+      headers: {
+        Authorization: `${token}`,
+        "Content-Type": "application/json",
+      },
+    })
+    .then((res) => {
+      console.log(res.data.data);
+      callback(res.data.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 const getUserById = async (id, callback) => {
   axios
     .get(`${API_URL}/api/users/find/${id}`, {
@@ -36,4 +53,4 @@ const getUserById = async (id, callback) => {
     });
 };
 
-export default { getUsers, getUserById };
+export default { getUsers, getUserById, getAllUsers };

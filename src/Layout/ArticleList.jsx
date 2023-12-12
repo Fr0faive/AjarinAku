@@ -31,8 +31,8 @@ const ArticleList = () => {
           <div className="flex flex-wrap gap-[22px] my-[19px]">
             {articles.slice(0, 10).map((article) => (
               <Link
-                to={`/explore/article/${article.id}`}
-                key={article.id}
+                to={`/explore/article/${article.article_id}`}
+                key={article.article_id}
                 title="Hallo"
               >
                 <div className="card w-[180px] max-h-56 bg-white shadow-xl overflow-hidden">

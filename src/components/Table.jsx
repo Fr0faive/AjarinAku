@@ -7,11 +7,37 @@ import categoryService from "../services/category.service";
 
 const Table = () => {
   const [dataArticle, setDataArticle] = useState([]);
+  const [userData, setUserData] = useState([]);
+  const [categoryData, setCategoryData] = useState([]);
   useEffect(() => {
     articleService.getArticles((data) => {
       setDataArticle(data);
     });
   }, []);
+
+  useEffect(() => {
+    categoryService.getAllCategory((data) => {
+      setCategoryData(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    userService.getAllUsers((data) => {
+      setUserData(data);
+    });
+  }, []);
+
+  const getUserName = (id) => {
+    const user = userData.find((author) => author.user_id === id);
+    console.log(user);
+    return user.firstName + " " + user.lastName;
+  };
+
+  const getCategoryName = (id) => {
+    const category = categoryData.find((article) => article.category_id === id);
+    console.log(category);
+    return category.category_name;
+  };
 
   // Persiapan data yang rapihnya
   // const [dataArticle, setDataArticle] = useState([]);
@@ -106,8 +132,8 @@ const Table = () => {
             <tbody>
               <tr className="text-biruTua">
                 <td>{data.title}</td>
-                <td>{data.userId}</td>
-                <td>{data.categoryId}</td>
+                <td>{getUserName(data.userId)}</td>
+                <td>{getCategoryName(data.categoryId)}</td>
                 <td className="text-center">
                   <button>
                     <EditIcon />
