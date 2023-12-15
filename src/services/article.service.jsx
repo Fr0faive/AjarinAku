@@ -7,7 +7,6 @@ const getArticles = async (callback) => {
   axios
     .get(`${API_URL}/api/articles`)
     .then((res) => {
-      console.log(res.data.data);
       callback(res.data.data);
     })
     .catch((err) => {
@@ -19,7 +18,6 @@ const getDetailsArticles = async (id, callback) => {
   axios
     .get(`${API_URL}/api/articles/${id}`)
     .then((res) => {
-      console.log(res.data.data);
       callback(res.data.data);
     })
     .catch((err) => {
@@ -35,9 +33,7 @@ const addArticle = async (data) => {
         "Content-Type": "multipart/form-data",
       },
     })
-    .then((res) => {
-      console.log(res.data);
-    })
+    .then((res) => {})
     .catch((err) => {
       console.log(err);
     });

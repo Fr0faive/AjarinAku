@@ -28,7 +28,6 @@ const getAllUsers = async (callback) => {
       },
     })
     .then((res) => {
-      console.log(res.data.data);
       callback(res.data.data);
     })
     .catch((err) => {
@@ -45,7 +44,6 @@ const getUserById = async (id, callback) => {
       },
     })
     .then((res) => {
-      console.log(res.data.data);
       callback(res.data.data);
     })
     .catch((err) => {

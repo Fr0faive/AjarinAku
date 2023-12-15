@@ -2,6 +2,7 @@
 import { ButtonP } from "../components/Button";
 
 const Hero = () => {
+  const isAuth = localStorage.getItem("Authorization");
   return (
     <div className="hero min-h-screen bg-[#EFF0F4] relative isolate px-6 pt-14 lg:px-8">
       <div className="hero-content flex-col grow lg:flex-row items-center">
@@ -17,7 +18,19 @@ const Hero = () => {
             aperiam. Illum ea error eligendi, in dicta, quisquam qui nihil quae
             id architecto sunt asperiores.
           </p>
-          <ButtonP link="/auth/register" value="Join for free" color="bg-biruTua" />
+          {isAuth ? (
+            <ButtonP
+              link="/explore"
+              value="Explore courses"
+              color="bg-biruTua"
+            />
+          ) : (
+            <ButtonP
+              link="/auth/register"
+              value="Join for free"
+              color="bg-biruTua"
+            />
+          )}
         </div>
         <img
           src="./assets/heroImg.png"
