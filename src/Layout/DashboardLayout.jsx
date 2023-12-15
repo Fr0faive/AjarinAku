@@ -7,7 +7,7 @@ const DashboardLayout = (props) => {
       <NavigationBar position="relative bg-white" />
       <div className="flex flex-row">
         <Sidebar />
-        <div className="w-full bg-white">{children}</div>
+        <div className="w-full bg-white min-h-screen">{children}</div>
       </div>
     </>
   );

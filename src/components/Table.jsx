@@ -27,93 +27,17 @@ const Table = () => {
     });
   }, []);
 
-  const getUserName = (id) => {
-    const user = userData.find((author) => author.user_id === id);
-    console.log(user);
-    return user.firstName + " " + user.lastName;
+  const getUsername = (id) => {
+    const user = userData.find((user) => user.user_id === id);
+    return user?.firstName + " " + user?.lastName;
   };
 
-  const getCategoryName = (id) => {
-    const category = categoryData.find((article) => article.category_id === id);
-    console.log(category);
-    return category.category_name;
+  const getArticleName = (id) => {
+    const category = categoryData.find(
+      (category) => category.category_id === id
+    );
+    return category?.category_name;
   };
-
-  // Persiapan data yang rapihnya
-  // const [dataArticle, setDataArticle] = useState([]);
-  // const [userData, setUserData] = useState({});
-  // const [categoryData, setCategoryData] = useState({});
-
-  // useEffect(() => {
-  //   // Fetch articles
-  //   articleService.getArticles((data) => {
-  //     setDataArticle(data);
-
-  //     // Fetch user data
-  //     const userIds = data.map((article) => article.userId);
-  //     userService.getUserById(userIds, (users) => {
-  //       const userMap = {};
-  //       users.forEach((user) => {
-  //         userMap[user.id] = user.name;
-  //       });
-  //       setUserData(userMap);
-  //     });
-
-  //     // Fetch category data
-  //     const categoryIds = data.map((article) => article.categoryId);
-  //     categoryService.getCategory(categoryIds, (categories) => {
-  //       const categoryMap = {};
-  //       categories.forEach((category) => {
-  //         categoryMap[category.id] = category.name;
-  //       });
-  //       setCategoryData(categoryMap);
-  //     });
-  //   });
-  // }, []);
-  // const [articles, setArticles] = useState([]);
-  // const [users, setUsers] = useState([]);
-
-  // console.log(articles);
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       // Fetch articles
-
-  //       await articleService.getArticles((data) => {
-  //         setArticles(data);
-  //       });
-
-  //       // Extract user and category IDs
-  //       const userIds = articles.map((article) => article.userId);
-  //       const categoryIds = articles.map((article) => article.categoryId);
-  //       console.log(userIds);
-  //       // Fetch user data
-  //       await userService.getUserById(userIds, (users) => {
-  //         setUsers(users);
-  //       });
-  //       const userMap = {};
-  //       users.forEach((user) => {
-  //         userMap[user.user_id] = user.username;
-  //       });
-  //       setUserData(userMap);
-
-  //       // Fetch category data
-  //       const categories = await categoryService.getCategory(categoryIds);
-  //       const categoryMap = {};
-  //       categories.forEach((category) => {
-  //         categoryMap[category.category_id] = category.category_name;
-  //       });
-  //       setCategoryData(categoryMap);
-
-  //       // Set article data
-  //       setDataArticle(articles);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
 
   return (
     <>
@@ -132,8 +56,8 @@ const Table = () => {
             <tbody>
               <tr className="text-biruTua">
                 <td>{data.title}</td>
-                <td>{getUserName(data.userId)}</td>
-                <td>{getCategoryName(data.categoryId)}</td>
+                <td>{getUsername(data.userId)}</td>
+                <td>{getArticleName(data.categoryId)}</td>
                 <td className="text-center">
                   <button>
                     <EditIcon />
