@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import articleService from "../services/article.service";
+import userService from "../services/user.service";
 
 const DashContent = () => {
-  const dataDisplay = [
+  const [dataDisplay, setDataDisplay] = useState([
     {
       id: 1,
       title: "Total Articles",
@@ -15,7 +16,7 @@ const DashContent = () => {
       value: "20",
       image: "/assets/person.png",
     },
-  ];
+  ]);
 
   const [articles, setArticles] = useState([]);
   useEffect(() => {
@@ -23,6 +24,31 @@ const DashContent = () => {
       setArticles(data);
     });
   }, []);
+
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    userService.getAllUsers((data) => {
+      setUsers(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    // Perbarui nilai 'value' untuk 'id' 1 dengan panjang 'articles'
+    setDataDisplay((prevDataDisplay) =>
+      prevDataDisplay.map((item) =>
+        item.id === 1 ? { ...item, value: articles.length.toString() } : item
+      )
+    );
+  }, [articles]);
+
+  useEffect(() => {
+    setDataDisplay((prevDataDisplay) =>
+      prevDataDisplay.map((item) =>
+        item.id === 2 ? { ...item, value: users.length.toString() } : item
+      )
+    );
+  }, [users]);
+
   return (
     <div className="w-full h-screen bg-[#EFF0F4]">
       <div className="pt-10 pl-10">

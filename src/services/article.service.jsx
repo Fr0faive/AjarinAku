@@ -8,6 +8,7 @@ const getArticles = async (callback) => {
     .get(`${API_URL}/api/articles`)
     .then((res) => {
       callback(res.data.data);
+      console.log(res.data.data);
     })
     .catch((err) => {
       console.log(err);

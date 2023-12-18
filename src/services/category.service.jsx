@@ -34,6 +34,7 @@ const getAllCategory = async (callback) => {
       },
     })
     .then((res) => {
+      console.log(res.data.data);
       callback(res.data.data);
     })
     .catch((err) => {

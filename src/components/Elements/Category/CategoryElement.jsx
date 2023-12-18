@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import categoryService from "../../../services/category.service";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
+import FormCategory from "./FormCategory";
+import Modal from "../../Modal";
 const CategoryElement = () => {
   const [dataCategory, setDataCategory] = useState([]);
 
@@ -12,13 +12,12 @@ const CategoryElement = () => {
     });
   }, []);
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-[#EFF0F4] text-gray-900">
+    <div className="flex flex-col py-20 items-center h-screen bg-[#EFF0F4] text-gray-900">
       <h1 className="text-3xl font-bold mb-4 underline">Category List</h1>
-      <button className="btn bg-blue-500 hover:bg-blue-700 text-white border-none mb-3">
-        <a href="">
-          <FontAwesomeIcon icon={faPlus} /> Add Category
-        </a>
-      </button>
+
+      <Modal title="Tambah Kategori">
+        <FormCategory />
+      </Modal>
       <table className="table bg-white w-1/3 my-3">
         <thead>
           <tr className="text-black text-lg">

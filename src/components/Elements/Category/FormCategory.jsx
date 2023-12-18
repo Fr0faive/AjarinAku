@@ -7,11 +7,11 @@ const FormCategory = () => {
   const handlePost = async (e) => {
     e.preventDefault();
     console.log(categoryData);
-    console.log(token);
     try {
       const result = await CategoryService.createCategory(categoryData);
       console.log(result);
       alert("Category created successfully");
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
@@ -33,7 +33,7 @@ const FormCategory = () => {
           value={categoryData.category_name}
           onChange={handleChange}
         />
-        <Button value="Tambahkan" type="submit" color="primary" />
+        <Button value="Tambahkan" type="submit" color="bg-info" />
       </div>
     </form>
   );
