@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import articleService from "../services/article.service";
 import userService from "../services/user.service";
 import categoryService from "../services/category.service";
+import { Link } from "react-router-dom";
 
 const Table = () => {
   const [dataArticle, setDataArticle] = useState([]);
@@ -39,6 +40,19 @@ const Table = () => {
     return category?.category_name;
   };
 
+  const handleDelete = async (id) => {
+    try {
+      confirm("Apakah anda yakin ingin menghapus?");
+      if (confirm) {
+        await articleService.delArticle(id);
+        alert("Artikel Berhasil");
+        window.location.reload();
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <>
       <div className="ml-28">
@@ -59,12 +73,12 @@ const Table = () => {
                 <td>{getUsername(data.userId)}</td>
                 <td>{getArticleName(data.categoryId)}</td>
                 <td className="text-center">
-                  <button>
-                    <EditIcon />
-                  </button>
+                  <Link to={`/dashboard/edit-post/${data.article_id}`}>
+                    <img src="/assets/IconEdit.png" alt="" width={18} />
+                  </Link>
                 </td>
                 <td className="text-center">
-                  <button>
+                  <button onClick={() => handleDelete(data.article_id)}>
                     <DeleteIcon />
                   </button>
                 </td>

@@ -40,8 +40,42 @@ const addArticle = async (data) => {
     });
 };
 
+const delArticle = async (id) => {
+  axios
+    .delete(`${API_URL}/api/articles/${id}`, {
+      headers: {
+        Authorization: `${token}`,
+        "Content-Type": "application/json",
+      },
+    })
+    .then((res) => {
+      console.log(res.data.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+const editArticles = async (id, data) => {
+  axios
+    .put(`${API_URL}/api/articles/${id}`, data, {
+      headers: {
+        Authorization: `${token}`,
+        "Content-Type": "multipart/form-data",
+      },
+    })
+    .then((res) => {
+      console.log(res.data.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 export default {
   getArticles,
   getDetailsArticles,
   addArticle,
+  delArticle,
+  editArticles,
 };

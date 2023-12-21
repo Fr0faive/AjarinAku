@@ -15,6 +15,7 @@ import PrivateRoutes from "./utils/private.routes.jsx";
 import IsAuth from "./utils/isAuth.jsx";
 import AddPost from "./pages/AddPost.jsx";
 import CategoryPage from "./pages/CategoryPage.jsx";
+import EditPost from "./pages/EditPost.jsx";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/add-post",
         element: <AddPost />,
+      },
+      {
+        path: "/dashboard/edit-post/:id",
+        element: <EditPost />,
       },
       {
         path: "/dashboard/category-post",

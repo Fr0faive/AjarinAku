@@ -1,19 +1,13 @@
-import React from "react";
-import { useRef } from "react";
+import React, { useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
-import { Button } from "./Button";
 
-const TextEditor = ({ onEditorChange }) => {
-  const editorRef = useRef();
-
+const TextEditor = ({ onEditorChange, onInit, value }) => {
   return (
     <div>
       <Editor
         apiKey="k155dz1h9ka9jvfa2v1y5w9zzsitm4ucg9hjb750412ng481"
-        onInit={(editor) => {
-          editorRef.current = editor;
-        }}
-        initialValue="<p>Masukan isi artikel</p>"
+        onInit={onInit}
+        value={value}
         init={{
           height: 500,
           menubar: false,

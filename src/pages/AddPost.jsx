@@ -62,7 +62,10 @@ const AddPost = () => {
     console.log(dataArticle);
     try {
       const result = articleService.addArticle(dataArticle);
-      console.log(result);
+      if (result) {
+        alert("Artikel Berhasil Ditambahkan");
+        window.location.reload();
+      }
     } catch (error) {
       console.log(error);
     }
