@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000"; // Gantilah dengan URL API sesuai kebutuhan
+const API_URL = "https://api.ajarinaku.my.id"; // Gantilah dengan URL API sesuai kebutuhan
 
 const token = localStorage.getItem("Authorization");
 
